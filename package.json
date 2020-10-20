@@ -1,0 +1,26 @@
+{
+  "name": "@elevio/kb-javascript-starter",
+  "version": "0.0.1",
+  "description": "This is a starter kit for Elevios KB builder project",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "elevio-kb dev",
+    "extract-locales": "elevio-kb extract-locales",
+    "build": "NODE_ENV=production elevio-kb build",
+    "build:analyse": "elevio-kb build-analyse",
+    "watch:validate": "tsc --noEmit --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "https://github.com/elevio/kb-javascript-starter",
+  "author": "kristian@elev.io",
+  "dependencies": {
+    "@elevio/kb-kit": "0.0.21",
+    "classnames": "^2.2.6",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {},
+  "license": "MIT",
+  "private": true
+}

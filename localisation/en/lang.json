@@ -1,0 +1,18 @@
+{
+  "articleFeedback": {
+    "question": "Did this article help solve your problem?",
+    "thanksMsg": "Thanks for submitting your feedback!",
+    "emailPlaceholder": "",
+    "feedbackPlaceholder": ""
+  },
+  "error": {
+    "defaultTitle": "",
+    "title": "Whoops!"
+  },
+  "login": "Log in",
+  "logout": "Log out",
+  "search": {
+    "shortplaceholder": "",
+    "placeholder": "Search our help centre..."
+  }
+}
