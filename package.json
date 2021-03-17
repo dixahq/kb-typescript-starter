@@ -6,21 +6,21 @@
   "scripts": {
     "start": "elevio-kb dev",
     "extract-locales": "elevio-kb extract-locales",
-    "build": "NODE_ENV=production elevio-kb build",
+    "start:compiled": "USE_COMPILED_FILES=true elevio-kb dev",
+    "build": "elevio-kb build",
     "build:analyse": "elevio-kb build-analyse",
-    "watch:validate": "tsc --noEmit --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "save": "elevio-kb save-version",
+    "deploy": "elevio-kb publish-version"
   },
   "repository": "https://github.com/elevio/kb-javascript-starter",
   "author": "kristian@elev.io",
   "dependencies": {
-    "@elevio/kb-kit": "0.0.21",
+    "@elevio/kb-kit": "^0.0.58",
     "classnames": "^2.2.6",
     "prop-types": "^15.7.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   },
-  "devDependencies": {},
   "license": "MIT",
   "private": true
 }

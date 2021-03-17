@@ -1,6 +1,5 @@
 import * as React from "react";
 import useTranslation from "@elevio/kb-kit/lib/hooks/useTranslation";
-import { MainHeading } from "@elevio/styles/lib/components/text";
 import * as Category from "@elevio/kb-kit/lib/toolkit/category";
 import * as Search from "@elevio/kb-kit/lib/toolkit/search";
 import * as Article from "@elevio/kb-kit/lib/toolkit/article";
@@ -25,7 +24,7 @@ const Page = () => {
     <PageLayout header={<Header />} footer={<Footer />}>
       <WithAsideLayout>
         <Aside>
-          <Search.Search
+          <Search.Input
             placeholder={t("search.shortplaceholder")}
             className="mb-12 hidden md:block"
             data-testid="category-search-input"
@@ -36,9 +35,9 @@ const Page = () => {
         <Main>
           <MainHeader>
             <Breadcrumb className="mb-6" />
-            <MainHeading className="mb-4" data-testid="category-title">
+            <h1 className="mb-4" data-testid="category-title">
               <Category.Title />
-            </MainHeading>
+            </h1>
           </MainHeader>
 
           <MainBody data-testid="category-body">

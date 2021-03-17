@@ -19,7 +19,6 @@ import Breadcrumb from "../components/PageBreadcrumbs";
 import ArticleMeta from "../components/ArticleMeta";
 import ArticleIcons from "../components/ArticleIcons";
 import ArticleFeedback from "../components/ArticleFeedback";
-import { MainHeading } from "@elevio/styles/lib/components/text";
 
 const Page = () => {
   const { t } = useTranslation();
@@ -27,7 +26,7 @@ const Page = () => {
     <PageLayout header={<Header />} footer={<Footer />}>
       <WithAsideLayout>
         <Aside>
-          <Search.Search
+          <Search.Input
             className="mb-12 hidden md:block"
             placeholder={t("search.shortplaceholder", "Search")}
             data-testid="article-search-input"
@@ -41,9 +40,9 @@ const Page = () => {
           <MainHeader className="pt-16">
             <ArticleIcons />
             <Breadcrumb className="mb-6" />
-            <MainHeading className="mb-4" data-testid="article-title">
+            <h1 className="mb-4" data-testid="article-title">
               <Article.Title />
-            </MainHeading>
+            </h1>
             <ArticleMeta />
           </MainHeader>
 

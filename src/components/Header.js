@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import cx from "classnames";
 import { Trans } from "@elevio/kb-kit/lib/toolkit/trans";
-import Icon from "@elevio/styles/lib/components/icons";
+// import Icon from "@elevio/styles/lib/components/icons";
 import * as Search from "@elevio/kb-kit/lib/toolkit/search";
 import useLanguages from "@elevio/kb-kit/lib/hooks/useLanguages";
 
-import LanguagePicker from "@elevio/styles/lib/components/languagePicker";
+// import LanguagePicker from "@elevio/styles/lib/components/languagePicker";
 import { Logo } from "./Logo";
 import LoginLogout from "./LoginLogout";
 
@@ -33,11 +33,11 @@ const Header = ({ children, className, hideSearch }) => {
 
             {supportedLanguages.length > 1 && (
               <div className="w-56">
-                <LanguagePicker
+                {/* <LanguagePicker
                   supportedLanguages={supportedLanguages}
                   value={language}
                   onChange={setCurrentLanguage}
-                />
+                /> */}
               </div>
             )}
           </div>
@@ -48,11 +48,11 @@ const Header = ({ children, className, hideSearch }) => {
                 className="mr-6"
                 onClick={() => setDisplaySearchBar(!displaySearchBar)}
               >
-                <Icon icon="search" className="text-white" />
+                {/* <Icon icon="search" className="text-white" /> */}
               </button>
             )}
             <button onClick={() => setDisplayMobileMenu(!displayMobileMenu)}>
-              <Icon icon="menu" className="text-white" />
+              {/* <Icon icon="menu" className="text-white" /> */}
             </button>
           </div>
         </nav>
@@ -69,20 +69,20 @@ const Header = ({ children, className, hideSearch }) => {
               <Trans i18nKey="external-link">Our Site</Trans>
             </a>
             <LoginLogout className="text-white mb-3" />
-            {supportedLanguages.length > 1 && (
+            {/* {supportedLanguages.length > 1 && (
               <LanguagePicker
                 supportedLanguages={supportedLanguages}
                 value={language}
                 onChange={setCurrentLanguage}
               />
-            )}
+            )} */}
           </div>
         </div>
       )}
 
       {displaySearchBar && !hideSearch && (
         <div className="py-6 pb-3 max-w-3xl mx-auto">
-          <Search.Search />
+          <Search.Input />
         </div>
       )}
     </header>

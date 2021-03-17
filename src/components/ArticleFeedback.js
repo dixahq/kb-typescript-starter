@@ -2,13 +2,13 @@ import React from "react";
 import cx from "classnames";
 import { Trans } from "@elevio/kb-kit/lib/toolkit/trans";
 import useTranslation from "@elevio/kb-kit/lib/hooks/useTranslation";
-import { InnerCard } from "@elevio/styles/lib/components/cards";
-import { Button } from "@elevio/styles/lib/components/buttons";
-import TextInput from "@elevio/styles/lib/components/form/elements/TextInput";
-import TextArea from "@elevio/styles/lib/components/form/elements/TextArea";
-import ErrorLabel from "@elevio/styles/lib/components/form/elements/ErrorLabel";
-import { Inline } from "@elevio/styles/lib/components/notifications";
-import { addClassName } from "@elevio/styles/lib/utils/classes";
+// TODO:
+// import { InnerCard } from "@elevio/styles/lib/components/cards";
+// import { Button } from "@elevio/styles/lib/components/buttons";
+// import TextInput from "@elevio/styles/lib/components/form/elements/TextInput";
+// import TextArea from "@elevio/styles/lib/components/form/elements/TextArea";
+// import ErrorLabel from "@elevio/styles/lib/components/form/elements/ErrorLabel";
+// import { Inline } from "@elevio/styles/lib/components/notifications";
 import useArticleFeedback, {
   FeedbackFormShape,
 } from "@elevio/kb-kit/lib/hooks/useArticleFeedback";
@@ -27,36 +27,36 @@ export const FeedbackInitial = ({
   );
   const _title = title || defaultTitle;
   return (
-    <InnerCard
-      className={cx(
-        addClassName("feedback"),
-        "flex flex-col lg:flex-row items-center justify-between",
-        className
-      )}
-      data-testid="article-feedback"
-    >
-      <h3 className="mb-6 lg:mb-0">{_title}</h3>
-      <div className="flex-end align-right">
-        <Button
-          className="ml-4"
-          size="compact"
-          onClick={onPositive}
-          disabled={isLoading}
-          data-testid="article-feedback-positive"
-        >
-          <Trans i18nKey="articleFeedback.positive">Yes</Trans>
-        </Button>
-        <Button
-          className="ml-4"
-          size="compact"
-          onClick={onNegative}
-          disabled={isLoading}
-          data-testid="article-feedback-negative"
-        >
-          <Trans i18nKey="articleFeedback.negative">No</Trans>
-        </Button>
-      </div>
-    </InnerCard>
+    <h1>TODO</h1>
+    // <InnerCard
+    //   className={cx(
+    //     "flex flex-col lg:flex-row items-center justify-between",
+    //     className
+    //   )}
+    //   data-testid="article-feedback"
+    // >
+    //   <h3 className="mb-6 lg:mb-0">{_title}</h3>
+    //   <div className="flex-end align-right">
+    //     <Button
+    //       className="ml-4"
+    //       size="compact"
+    //       onClick={onPositive}
+    //       disabled={isLoading}
+    //       data-testid="article-feedback-positive"
+    //     >
+    //       <Trans i18nKey="articleFeedback.positive">Yes</Trans>
+    //     </Button>
+    //     <Button
+    //       className="ml-4"
+    //       size="compact"
+    //       onClick={onNegative}
+    //       disabled={isLoading}
+    //       data-testid="article-feedback-negative"
+    //     >
+    //       <Trans i18nKey="articleFeedback.negative">No</Trans>
+    //     </Button>
+    //   </div>
+    // </InnerCard>
   );
 };
 
@@ -75,69 +75,70 @@ export const FeedbackSuccess = ({ className }) => {
     "Thanks for submitting your feedback!"
   );
 
-  return (
-    <Inline
-      title={message}
-      type="success"
-      className={cx(addClassName("feedback-success"), className)}
-    />
-  );
+  // return <Inline title={message} type="success" />;
+  return null;
 };
 
 const ErrorMessage = ({ error }) => {
   if (!error) return null;
-  return <ErrorLabel data-testid={error}>{error}</ErrorLabel>;
+  // return <ErrorLabel data-testid={error}>{error}</ErrorLabel>;
+  return null;
 };
 
 const EmailBox = ({ error, ...props }) => {
   const { t } = useTranslation();
-  return (
-    <>
-      <TextInput
-        type="email"
-        name="email"
-        placeholder={t("articleFeedback.emailPlaceholder")}
-        data-testid="article-feedback-email-input"
-        hasError={!!error}
-        {...props}
-      />
-      <ErrorMessage error={error} />
-    </>
-  );
+  // return (
+  //   <>
+  //     <TextInput
+  //       type="email"
+  //       name="email"
+  //       placeholder={t("articleFeedback.emailPlaceholder")}
+  //       data-testid="article-feedback-email-input"
+  //       hasError={!!error}
+  //       {...props}
+  //     />
+  //     <ErrorMessage error={error} />
+  //   </>
+  // );
+
+  return null;
 };
 
 const MessageBox = ({ error, ...props }) => {
   const { t } = useTranslation();
-  return (
-    <>
-      <TextArea
-        name="feedback"
-        rows={8}
-        noResize
-        placeholder={t("articleFeedback.feedbackPlaceholder")}
-        data-testid="article-feedback-feedback-input"
-        hasError={!!error}
-        {...props}
-      />
-      <ErrorMessage error={error} />
-    </>
-  );
+  // return (
+  //   <>
+  //     <TextArea
+  //       name="feedback"
+  //       rows={8}
+  //       noResize
+  //       placeholder={t("articleFeedback.feedbackPlaceholder")}
+  //       data-testid="article-feedback-feedback-input"
+  //       hasError={!!error}
+  //       {...props}
+  //     />
+  //     <ErrorMessage error={error} />
+  //   </>
+  // );
+
+  return null;
 };
 
 const SubmitButton = ({ disabled }) => {
   const classes = cx("submit", { invalid: disabled });
-  return (
-    <Button
-      appearance="primary"
-      size="compact"
-      type="submit"
-      className={classes}
-      disabled={disabled}
-      data-testid="article-feedback-submit-button"
-    >
-      <Trans i18nKey="articleFeedback.submit">Submit</Trans>
-    </Button>
-  );
+  // return (
+  //   <Button
+  //     appearance="primary"
+  //     size="compact"
+  //     type="submit"
+  //     className={classes}
+  //     disabled={disabled}
+  //     data-testid="article-feedback-submit-button"
+  //   >
+  //     <Trans i18nKey="articleFeedback.submit">Submit</Trans>
+  //   </Button>
+  // );
+  return null;
 };
 
 export const FeedbackForm = ({
@@ -155,7 +156,7 @@ export const FeedbackForm = ({
 }) => {
   return (
     <form onSubmit={onSubmit} noValidate>
-      <InnerCard className={cx(addClassName("feedback-form"), className)}>
+      {/* <InnerCard className={className}>
         <h3 className="mb-6">
           <Trans i18nKey="articleFeedback.negativeQuestion">
             Sorry this article did not help. We would love your feedback.
@@ -200,7 +201,7 @@ export const FeedbackForm = ({
             </Button>
           )}
         </div>
-      </InnerCard>
+      </InnerCard> */}
     </form>
   );
 };
@@ -225,36 +226,38 @@ const ArticleFeedback = ({ className }) => {
     handleEmailChange,
   } = useArticleFeedback();
 
-  if (!isFeedbackEnabled) return null;
-  if (stage === "error") return <FeedbackError className={className} />;
-  if (stage === "positive" || stage === "submitted")
-    return <FeedbackSuccess className={className} />;
-  if (stage === "negative") {
-    return (
-      <FeedbackForm
-        className={className}
-        onFeedbackSkipped={onFeedbackSkipped}
-        onSubmit={onSubmit}
-        isSubmitting={isFeedbackFormSubmitting}
-        isEmailHidden={emailFieldIsHidden}
-        handleMessageChange={handleMessageChange}
-        handleEmailChange={handleEmailChange}
-        showAnonymousWarning={showAnonymousWarning}
-        hasSubmitted={hasSubmitted}
-        values={values}
-        messageError={messageError}
-        emailError={emailError}
-      />
-    );
-  }
-  return (
-    <FeedbackInitial
-      className={className}
-      onPositive={onPositiveReaction}
-      onNegative={onNegativeReaction}
-      isLoading={isLoading}
-    />
-  );
+  return null;
+
+  // if (!isFeedbackEnabled) return null;
+  // if (stage === "error") return <FeedbackError className={className} />;
+  // if (stage === "positive" || stage === "submitted")
+  //   return <FeedbackSuccess className={className} />;
+  // if (stage === "negative") {
+  //   return (
+  //     <FeedbackForm
+  //       className={className}
+  //       onFeedbackSkipped={onFeedbackSkipped}
+  //       onSubmit={onSubmit}
+  //       isSubmitting={isFeedbackFormSubmitting}
+  //       isEmailHidden={emailFieldIsHidden}
+  //       handleMessageChange={handleMessageChange}
+  //       handleEmailChange={handleEmailChange}
+  //       showAnonymousWarning={showAnonymousWarning}
+  //       hasSubmitted={hasSubmitted}
+  //       values={values}
+  //       messageError={messageError}
+  //       emailError={emailError}
+  //     />
+  //   );
+  // }
+  // return (
+  //   <FeedbackInitial
+  //     className={className}
+  //     onPositive={onPositiveReaction}
+  //     onNegative={onNegativeReaction}
+  //     isLoading={isLoading}
+  //   />
+  // );
 };
 
 export default ArticleFeedback;

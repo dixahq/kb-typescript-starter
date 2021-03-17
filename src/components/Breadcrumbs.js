@@ -1,7 +1,5 @@
 import React from "react";
 import cx from "classnames";
-import Icon from "@elevio/styles/lib/components/icons";
-import { addClassName } from "@elevio/styles/lib/utils/classes";
 
 import { IBreadCrumb } from "@elevio/kb-kit/lib/types";
 import * as Meta from "@elevio/kb-kit/lib/toolkit/meta";
@@ -11,7 +9,6 @@ import * as Article from "@elevio/kb-kit/lib/toolkit/article";
 const Breadcrumb = ({ className, crumbs, noLinks }) => (
   <div
     className={cx(
-      addClassName("breadcrumb"),
       "flex items-center text-grey-lighter leading-none",
       className
     )}
@@ -25,7 +22,7 @@ const Breadcrumb = ({ className, crumbs, noLinks }) => (
         />
         {index < crumbs.length - 1 && (
           <span className="mx-3">
-            <Icon size={11} icon="chevron-right" />
+            {/* <Icon size={11} icon="chevron-right" /> */}
           </span>
         )}
       </React.Fragment>

@@ -1,7 +1,6 @@
 import React from "react";
 import cx from "classnames";
 import { Trans } from "@elevio/kb-kit/lib/toolkit/trans";
-import { Button } from "@elevio/styles/lib/components/buttons";
 import useSearchResults from "@elevio/kb-kit/lib/hooks/useSearchResults";
 
 const SearchMore = ({ className, ...props }) => {
@@ -9,8 +8,7 @@ const SearchMore = ({ className, ...props }) => {
   if (!hasMore) return null;
 
   return (
-    <Button
-      appearance="primary"
+    <button
       className={cx("ShowMoreButton", className)}
       disabled={isFetching || !hasMore}
       onClick={loadMore}
@@ -18,7 +16,7 @@ const SearchMore = ({ className, ...props }) => {
     >
       <Trans i18nKey="search.loadmore">Load more</Trans>
       {isFetching && "..."}
-    </Button>
+    </button>
   );
 };
 

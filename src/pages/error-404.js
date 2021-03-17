@@ -19,10 +19,7 @@ const Page = () => {
           </Trans>
         </p>
 
-        <Search.Search
-          placeholder={t("search.placeholder")}
-          className="mb-12"
-        />
+        <Search.Input placeholder={t("search.placeholder")} className="mb-12" />
 
         <p className="text-grey-light">
           <Trans i18nKey="support.question">

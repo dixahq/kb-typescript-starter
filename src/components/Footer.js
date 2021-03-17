@@ -1,12 +1,11 @@
 import React from "react";
 import cx from "classnames";
 import { Trans } from "@elevio/kb-kit/lib/toolkit/trans";
-import { addClassName } from "@elevio/styles/lib/utils/classes";
 import LoginLogout from "./LoginLogout";
 
 const Footer = ({ className }) => (
   <footer
-    className={cx(addClassName("footer"), "bg-white flex-shrink-0", className)}
+    className={cx("bg-white flex-shrink-0", className)}
     data-testid="footer"
   >
     <div className="w-full lg:max-w-6xl mx-auto">

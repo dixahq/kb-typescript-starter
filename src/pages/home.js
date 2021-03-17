@@ -1,5 +1,4 @@
 import * as React from "react";
-import { HeaderTitle } from "@elevio/styles/lib/components/text";
 import { Trans } from "@elevio/kb-kit/lib/toolkit/trans";
 import useTranslation from "@elevio/kb-kit/lib/hooks/useTranslation";
 
@@ -21,13 +20,13 @@ const HomePage = () => {
     <PageLayout
       header={
         <Header hideSearch>
-          <HeaderTitle className="text-center">
+          <h1 className="text-center">
             <Trans i18nKey="home.welcome">
               Welcome to the elevio help center. Here you will find
               documentation on how to use our product.
             </Trans>
-          </HeaderTitle>
-          <Search.Search
+          </h1>
+          <Search.Input
             placeholder={t("search.placeholder")}
             data-testid="search-input"
           />

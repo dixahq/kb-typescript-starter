@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Trans } from "@elevio/kb-kit/lib/toolkit/trans";
-import Icon from "@elevio/styles/lib/components/icons";
 import { AccessLevel } from "@elevio/kb-kit/lib/types";
 import useArticle from "@elevio/kb-kit/lib/hooks/useArticle";
 
@@ -24,7 +23,7 @@ const AccessBanner = () => {
           className="flex justify-start items-center"
           data-testid="article-access"
         >
-          <Icon icon="eye-off" size={20} />
+          {/* <Icon icon="eye-off" size={20} /> */}
           <span className="ml-6">
             <strong>
               {access === AccessLevel.Restricted ? (
