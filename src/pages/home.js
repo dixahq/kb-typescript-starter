@@ -29,7 +29,7 @@ const HomePage = () => {
           <Search.Input
             placeholder={t("search.placeholder")}
             data-testid="search-input"
-            className="search"
+            className="hero-search"
           />
         </Header>
       }

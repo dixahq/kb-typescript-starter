@@ -1,118 +1,45 @@
-:root {
-  --background-default: #FFF;
-  --background-subtle: #F7F7F7;
-  --border-default: #CCC;
-  --text-strong: #000;
-  --text-default: #333; 
-  --text-subtle: #666;
-}
-
-
+/* RESET */
 html {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;;
 }
-
 body {
-  background-color: var(--background-default);
+  background-color: #FFF;
   margin: 0;
 }
-
 h1, h2, h3, h4, h5, h6, p {
-  margin-top: 0;
-  margin-bottom: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+svg {
+  display: block;
 }
 
-.section-light-grey {
-  background-color: var(--background-subtle);
+/* HEADER */
+.header {
+  background-color: #F7F7F7;
 }
 
-.section-wrapper {
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 1120px;
-  padding-top: 64px;
-  padding-bottom: 64px;
-  width: 80%;
-}
-
-.align-items\:center {
-  align-items: center;
-}
-
-.background-color\:light-grey {
-  background-color: var(--background-subtle);
-}
-
-.display\:flex {
+/* NAV */
+.nav-wrapper {
   display: flex;
-}
-
-.display\:grid {
-  display: grid;
-}
-
-.grid-template-columns\:2 {
-  grid-template-columns: 1fr 1fr;
-}
-
-.justify-content\:space-between {
   justify-content: space-between;
-}
-
-.margin-right\:auto {
-  margin-right: auto;
-}
-
-.margin-inline\:auto {
   margin-inline-start: auto;
   margin-inline-end: auto;
-}
-
-.margin-top\:64 {
-  margin-top: 64px;
-}
-
-.max-width\:1120 {
   max-width: 1120px;
-}
-
-.padding-top\:32 {
-  padding-top: 32px;
-}
-
-.padding-bottom\:32 {
-  padding-bottom: 32px;
-}
-
-.padding-bottom\:64 {
-  padding-bottom: 64px;
-}
-
-.text-align\:center {
-  text-align: center;
-}
-
-.width\:80\% {
-  width: 80%;
-}
-
-/* NAMED */
-.header {
-  background-color: var(--background-subtle);
   padding-block-start: 32px;
   padding-block-end: 32px;
-}
-.header-wrapper {
-  margin-inline-start: auto;
-  margin-inline-end: auto;
-  max-width: 1120px;
   width: 80%;
+}
+.nav-details {
+  align-items: center;
+  display: flex;
 }
 .nav-logo {
   display: block;
 }
-.nav-logo svg {
-  display: block;
+.nav-logo-image {
+  height: 1.5rem;
+  width: 3.5rem;
 }
 .nav-title {
   margin-inline-start: 16px;
@@ -120,71 +47,38 @@ h1, h2, h3, h4, h5, h6, p {
 .nav-desktop-menu {
   display: none;
 }
+
+/* HERO */
 .hero-wrapper {
-  padding-block-start: 64px;
-  padding-block-end: 32px;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  max-width: 1120px;
+  padding-block-start: 32px;
+  padding-block-end: 64px;
+  text-align: center;
+  width: 80%;
 }
-.search {
+.hero-search {
   appearance: none;
-  background-color: var(--background-default);
+  background-color: #FFF;
   background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9.16666 3.33341C5.945 3.33341 3.33332 5.94509 3.33332 9.16675C3.33332 12.3884 5.945 15.0001 9.16666 15.0001C10.7777 15.0001 12.2349 14.3481 13.2914 13.2915C14.348 12.235 15 10.7778 15 9.16675C15 5.94509 12.3883 3.33341 9.16666 3.33341ZM1.66666 9.16675C1.66666 5.02461 5.02452 1.66675 9.16666 1.66675C13.3088 1.66675 16.6667 5.02461 16.6667 9.16675C16.6667 10.9373 16.0524 12.5654 15.0265 13.8481L18.0892 16.9108C18.4147 17.2363 18.4147 17.7639 18.0892 18.0893C17.7638 18.4148 17.2362 18.4148 16.9107 18.0893L13.848 15.0266C12.5653 16.0525 10.9372 16.6667 9.16666 16.6667C5.02452 16.6667 1.66666 13.3089 1.66666 9.16675Z' fill='%2374808A'/%3E%3C/svg%3E%0A");
   background-position: 16px 16px;
   background-repeat: no-repeat;
   background-size: 20px 20px;
-  border: thin solid var(--border-default);
+  border: thin solid #CCC;
   border-radius: 6px;
   box-sizing: border-box;
-  color: var(--text-default);
-  display: block;
+  color: #333;
+  display: inline-block;
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
   outline: none;
   padding: 16px 24px 16px 44px;
   margin-block-start: 32px;
-  margin-inline-start: auto;
-  margin-inline-end: auto;
   max-width: 400px;
   width: 100%;
 }
-
-.grid {
-  column-gap: 32px;
-  display: grid;
-  row-gap: 32px;
-}
-.grid-item {
-  display: grid;
-}
-
-.card {
-  background-color: var(--background-subtle);
-  color: inherit;
-  display: block;
-  padding: 64px 32px;
-  text-align: center;
-  text-decoration: none;
-}
-.card-title {
-  color: var(--text-strong);
-}
-.card-divider {
-  background-color: var(--border-default);
-  height: 1px;
-  margin: 32px auto 16px auto;
-  width: 64px;
-}
-.card-info {
-  color: var(--text-subtle);
-  margin-top: 16px;
-}
-
-@media screen and (min-width: 720px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 @media screen and (min-width: 1024px) {
   .nav-desktop-menu {
     display: flex;
@@ -193,7 +87,76 @@ h1, h2, h3, h4, h5, h6, p {
   .nav-mobile-menu-trigger {
     display: none;
   }
+}
+
+/* BODY */
+.body-wrapper {
+  padding-block-start: 64px;
+  padding-block-end: 64px;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  max-width: 1120px;
+  width: 80%;
+}
+
+/* GRID */
+.grid {
+  column-gap: 32px;
+  display: grid;
+  row-gap: 32px;
+}
+.grid-item {
+  display: grid;
+}
+@media screen and (min-width: 720px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 1024px) {
   .grid {
     grid-template-columns: repeat(3, 1fr);
   }
+}
+
+/* CARD */
+.card {
+  background-color: #F7F7F7;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 64px 32px;
+  text-align: center;
+  text-decoration: none;
+}
+.card-title {
+  color: #000;
+}
+.card-divider {
+  background-color: #CCC;
+  height: 1px;
+  margin: 32px auto 16px auto;
+  width: 64px;
+}
+.card-info {
+  color: #666;
+  margin-top: 16px;
+}
+
+/* FOOTER */
+.footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  max-width: 1120px;
+  padding-block-end: 64px;
+  width: 80%;
+}
+.footer-nav {
+  display: flex;
+}
+.footer-link {
+  display: block;
 }

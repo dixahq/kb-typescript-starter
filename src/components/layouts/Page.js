@@ -8,8 +8,8 @@ const PageLayout = ({ children, className, header, footer }) => (
   >
       {header}
       <Alert />
-      <div class="section">
-        <div class="section-wrapper">
+      <div class="body">
+        <div class="body-wrapper">
           {children}
         </div>
       </div>

@@ -5,19 +5,17 @@ import LoginLogout from "./LoginLogout";
 
 const Footer = ({ className }) => (
   <footer
-    className={cx("section", className)}
+    className={cx("footer", className)}
     data-testid="footer"
   >
-    <div className="section-wrapper">
-      <div className="display:flex justify-content:space-between">
-        <p>&copy; {new Date().getFullYear()} Elevio Pty Ltd</p>
-        <nav>
-          <a href="#">
-            <Trans i18nKey="external-link">Our Site</Trans>
-          </a>
-          <LoginLogout />
-        </nav>
-      </div>
+    <div className="footer-wrapper">
+      <p className="footer-copyright">&copy; {new Date().getFullYear()} Elevio Pty Ltd</p>
+      <nav className="footer-nav">
+        <a className="footer-link" href="#">
+          <Trans i18nKey="external-link">Our Site</Trans>
+        </a>
+        <LoginLogout className="footer-link" />
+      </nav>
     </div>
   </footer>
 );

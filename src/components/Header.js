@@ -17,43 +17,45 @@ const Header = ({ children, className, hideSearch }) => {
   return (
     <header className={cx("header", className)} data-testid="header">
       <div className="header-wrapper">
-        <nav className="display:flex justify-content:space-between" aria-label="navigation">
-          <div className="display:flex align-items:center">
-            <Logo />
-            <div class="nav-title">
-              <Trans i18nKey="header.title">Help Centre</Trans>
-            </div>
-          </div>
-
-          <div className="nav-desktop-menu">
-            <a className="text-white mr-6" href="#">
-              <Trans i18nKey="external-link">Our Site</Trans>
-            </a>
-            <LoginLogout className="text-white mr-6" />
-
-            {supportedLanguages.length > 1 && (
-              <div className="w-56">
-                {/* <LanguagePicker
-                  supportedLanguages={supportedLanguages}
-                  value={language}
-                  onChange={setCurrentLanguage}
-                /> */}
+        <nav className="nav" aria-label="navigation">
+          <div className="nav-wrapper">
+            <div className="nav-details">
+              <Logo />
+              <div class="nav-title">
+                <Trans i18nKey="header.title">Help Centre</Trans>
               </div>
-            )}
-          </div>
+            </div>
 
-          <div className="nav-mobile-menu-trigger">
-            {!hideSearch && (
-              <button
-                className="mr-6"
-                onClick={() => setDisplaySearchBar(!displaySearchBar)}
-              >
-                Search
+            <div className="nav-desktop-menu">
+              <a className="text-white mr-6" href="#">
+                <Trans i18nKey="external-link">Our Site</Trans>
+              </a>
+              <LoginLogout className="text-white mr-6" />
+
+              {supportedLanguages.length > 1 && (
+                <div className="w-56">
+                  {/* <LanguagePicker
+                    supportedLanguages={supportedLanguages}
+                    value={language}
+                    onChange={setCurrentLanguage}
+                  /> */}
+                </div>
+              )}
+            </div>
+
+            <div className="nav-mobile-menu-trigger">
+              {!hideSearch && (
+                <button
+                  className="mr-6"
+                  onClick={() => setDisplaySearchBar(!displaySearchBar)}
+                >
+                  Search
+                </button>
+              )}
+              <button onClick={() => setDisplayMobileMenu(!displayMobileMenu)}>
+                Menu
               </button>
-            )}
-            <button onClick={() => setDisplayMobileMenu(!displayMobileMenu)}>
-              Menu
-            </button>
+            </div>
           </div>
         </nav>
 
@@ -82,7 +84,9 @@ const Header = ({ children, className, hideSearch }) => {
         )}
 
         {children && (
-          <div className="hero-wrapper">{children}</div>
+          <div className="hero">
+            <div className="hero-wrapper">{children}</div>
+          </div>
         )}
       </div>
     </header>
