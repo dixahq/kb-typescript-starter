@@ -900,10 +900,10 @@
   "resolved" "https://registry.npmjs.org/@elevio/js-analytics/-/js-analytics-0.0.9.tgz"
   "version" "0.0.9"
 
-"@elevio/kb-kit@^0.0.58":
-  "integrity" "sha512-B0Hvhni/lucfN1j8uBBROxv3g6NVqEZY5YWpi8pL7NGN5lzu1DzZw1bH5c7G/vZZ9qcxVfT8J/tIxNkUZk9wag=="
-  "resolved" "https://registry.npmjs.org/@elevio/kb-kit/-/kb-kit-0.0.58.tgz"
-  "version" "0.0.58"
+"@elevio/kb-kit@^0.0.59":
+  "integrity" "sha512-DYVdQxXx8gSTpIKTkMfcIcKApO/H4Ios00yaj4g643ykls5zhywnQXUXJq4V6KK6c3/m2lAf9IH3FCUeN2KoCw=="
+  "resolved" "https://registry.npmjs.org/@elevio/kb-kit/-/kb-kit-0.0.59.tgz"
+  "version" "0.0.59"
   dependencies:
     "@babel/core" "^7.13.10"
     "@babel/plugin-transform-runtime" "^7.13.10"
