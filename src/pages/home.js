@@ -20,15 +20,16 @@ const HomePage = () => {
     <PageLayout
       header={
         <Header hideSearch>
-          <h1 className="text-center">
+          <h1>
             <Trans i18nKey="home.welcome">
-              Welcome to the elevio help center. Here you will find
-              documentation on how to use our product.
+              Welcome to the elevio help center. <br />
+              Here you will find documentation on how to use our product.
             </Trans>
           </h1>
           <Search.Input
             placeholder={t("search.placeholder")}
             data-testid="search-input"
+            className="search"
           />
         </Header>
       }

@@ -14,14 +14,14 @@ export const MainCentered = ({ children, className, ...props }) => (
 );
 
 export const GridContainer = ({ children, className, ...props }) => (
-  <div className={cx("flex flex-wrap -mx-3", className)} {...props}>
+  <div className={cx("grid", className)} {...props}>
     {children}
   </div>
 );
 
 export const GridItem = ({ children, className, ...props }) => (
   <div
-    className={cx("w-full sm:w-1/2 md:w-1/3 px-3 mb-6", className)}
+    className={cx("grid-item", className)}
     {...props}
   >
     {children}

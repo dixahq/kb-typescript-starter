@@ -15,17 +15,17 @@ const Header = ({ children, className, hideSearch }) => {
   const { supportedLanguages, language, setCurrentLanguage } = useLanguages();
 
   return (
-    <header className={cx("bg-primary p-6", className)} data-testid="header">
-      <div className="w-full lg:max-w-6xl mx-auto">
-        <nav className="flex items-center justify-between">
-          <div className="flex items-center flex-shrink-0 text-white mr-6">
-            <Logo className="mr-6" />
-            <span className="hidden md:block">
+    <header className={cx("header", className)} data-testid="header">
+      <div className="header-wrapper">
+        <nav className="display:flex justify-content:space-between" aria-label="navigation">
+          <div className="display:flex align-items:center">
+            <Logo />
+            <div class="nav-title">
               <Trans i18nKey="header.title">Help Centre</Trans>
-            </span>
+            </div>
           </div>
 
-          <div className="flex items-center hidden md:flex">
+          <div className="nav-desktop-menu">
             <a className="text-white mr-6" href="#">
               <Trans i18nKey="external-link">Our Site</Trans>
             </a>
@@ -42,49 +42,49 @@ const Header = ({ children, className, hideSearch }) => {
             )}
           </div>
 
-          <div className="flex items-center flex md:hidden">
+          <div className="nav-mobile-menu-trigger">
             {!hideSearch && (
               <button
                 className="mr-6"
                 onClick={() => setDisplaySearchBar(!displaySearchBar)}
               >
-                {/* <Icon icon="search" className="text-white" /> */}
+                Search
               </button>
             )}
             <button onClick={() => setDisplayMobileMenu(!displayMobileMenu)}>
-              {/* <Icon icon="menu" className="text-white" /> */}
+              Menu
             </button>
           </div>
         </nav>
-      </div>
 
-      {children && (
-        <div className="py-12 pb-6 max-w-3xl mx-auto">{children}</div>
-      )}
-
-      {displayMobileMenu && (
-        <div className="py-12 pb-6 max-w-3xl mx-auto">
-          <div className="flex flex-col items-center text-center">
-            <a className="text-white mb-3" href="#">
-              <Trans i18nKey="external-link">Our Site</Trans>
-            </a>
-            <LoginLogout className="text-white mb-3" />
-            {/* {supportedLanguages.length > 1 && (
-              <LanguagePicker
-                supportedLanguages={supportedLanguages}
-                value={language}
-                onChange={setCurrentLanguage}
-              />
-            )} */}
+        {displayMobileMenu && (
+          <div className="nav-mobile-menu">
+            <div className="flex flex-col items-center text-center">
+              <a className="text-white mb-3" href="#">
+                <Trans i18nKey="external-link">Our Site</Trans>
+              </a>
+              <LoginLogout className="text-white mb-3" />
+              {/* {supportedLanguages.length > 1 && (
+                <LanguagePicker
+                  supportedLanguages={supportedLanguages}
+                  value={language}
+                  onChange={setCurrentLanguage}
+                />
+              )} */}
+            </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {displaySearchBar && !hideSearch && (
-        <div className="py-6 pb-3 max-w-3xl mx-auto">
-          <Search.Input />
-        </div>
-      )}
+        {displaySearchBar && !hideSearch && (
+          <div className="py-6 pb-3 max-w-3xl mx-auto">
+            <Search.Input />
+          </div>
+        )}
+
+        {children && (
+          <div className="hero-wrapper">{children}</div>
+        )}
+      </div>
     </header>
   );
 };
