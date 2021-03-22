@@ -95,9 +95,11 @@ button {
   fill: #000;
 }
 @media screen and (min-width: 1024px) {
-  .nav-desktop-menu,
-  .nav-mobile-menu {
+  .nav-desktop-menu {
     display: flex;
+  }
+  .nav-mobile-menu {
+    display: none;
   }
 }
 
