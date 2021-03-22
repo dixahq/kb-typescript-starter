@@ -2,21 +2,14 @@ import React from "react";
 import cx from "classnames";
 
 const WithAside = ({ children, className }) => (
-  <section className="sm:p-6">
-    <div className="w-full lg:max-w-6xl mx-auto">
-      <div className="flex flex-col-reverse md:flex-row">{children}</div>
-    </div>
-  </section>
+  <section className="with-aside">{children}</section>
 );
 
 export default WithAside;
 
 export const Aside = ({ children, className, ...props }) => (
   <aside
-    className={cx(
-      "w-full md:w-1/3 mr-0 md:mr-12 p-6 md:p-0 md:pt-12 sm:block",
-      className
-    )}
+    className={cx("aside",className)}
     {...props}
   >
     {children}
@@ -30,7 +23,7 @@ const MainContentCard = ({ children, className, ...props }) => (
 );
 
 export const Main = ({ children, className, ...props }) => (
-  <main className={cx("flex-1", className)} {...props}>
+  <main className={cx("main", className)} {...props}>
     <MainContentCard>{children}</MainContentCard>
   </main>
 );
