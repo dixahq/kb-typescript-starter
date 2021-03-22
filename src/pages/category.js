@@ -23,15 +23,6 @@ const Page = () => {
   return (
     <PageLayout header={<Header />} footer={<Footer />}>
       <WithAsideLayout>
-        <Aside>
-          <Search.Input
-            placeholder={t("search.shortplaceholder")}
-            className="mb-12 hidden md:block"
-            data-testid="category-search-input"
-          />
-          <CategoryList />
-        </Aside>
-
         <Main>
           <MainHeader>
             <Breadcrumb className="mb-6" />
@@ -51,6 +42,15 @@ const Page = () => {
             </Articles.Loop>
           </MainBody>
         </Main>
+
+        <Aside>
+          <Search.Input
+            placeholder={t("search.shortplaceholder")}
+            className="mb-12 hidden md:block"
+            data-testid="category-search-input"
+          />
+          <CategoryList />
+        </Aside>
       </WithAsideLayout>
     </PageLayout>
   );
