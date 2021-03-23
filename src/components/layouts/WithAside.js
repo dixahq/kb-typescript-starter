@@ -17,7 +17,7 @@ export const Aside = ({ children, className, ...props }) => (
 );
 
 const MainContentCard = ({ children, className, ...props }) => (
-  <div className={cx("rounded shadow bg-white", className)} {...props}>
+  <div className={cx("main-content-card", className)} {...props}>
     {children}
   </div>
 );
@@ -30,10 +30,7 @@ export const Main = ({ children, className, ...props }) => (
 
 export const MainHeader = ({ children, className, ...props }) => (
   <div
-    className={cx(
-      "border-b border-grey-lightest p-6 sm:p-12 relative",
-      className
-    )}
+    className={cx("main-header", className)}
     {...props}
   >
     {children}
@@ -42,7 +39,7 @@ export const MainHeader = ({ children, className, ...props }) => (
 
 export const MainBody = ({ children, className, ...props }) => (
   <div
-    className={cx("p-6 sm:p-12 border-b border-grey-lightest", className)}
+    className={cx("main-body", className)}
     {...props}
   >
     {children}
@@ -51,7 +48,7 @@ export const MainBody = ({ children, className, ...props }) => (
 
 export const MainFooter = ({ children, className, ...props }) => (
   <div
-    className={cx("p-6 sm:px-12 sm:py-6 text-center sm:text-left", className)}
+    className={cx("main-footer", className)}
     {...props}
   >
     {children}

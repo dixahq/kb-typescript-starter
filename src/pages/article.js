@@ -24,23 +24,12 @@ const Page = () => {
   const { t } = useTranslation();
   return (
     <PageLayout header={<Header />} footer={<Footer />}>
+      <Breadcrumb />
       <WithAsideLayout>
-        <Aside>
-          <Search.Input
-            className="mb-12 hidden md:block"
-            placeholder={t("search.shortplaceholder", "Search")}
-            data-testid="article-search-input"
-          />
-
-          <CategoryList />
-          <ArticleList />
-        </Aside>
-
         <Main>
-          <MainHeader className="pt-16">
+          <MainHeader>
             <ArticleIcons />
-            <Breadcrumb className="mb-6" />
-            <h1 className="mb-4" data-testid="article-title">
+            <h1 className="main-title" data-testid="article-title">
               <Article.Title />
             </h1>
             <ArticleMeta />
@@ -51,6 +40,16 @@ const Page = () => {
             <ArticleFeedback className="mb-6" />
           </MainBody>
         </Main>
+
+        <Aside>
+          <Search.Input
+            className="sidebar-search"
+            placeholder={t("search.shortplaceholder", "Search")}
+            data-testid="article-search-input"
+          />
+          <CategoryList />
+          <ArticleList />
+        </Aside>
       </WithAsideLayout>
     </PageLayout>
   );

@@ -22,31 +22,31 @@ const Page = () => {
   const { t } = useTranslation();
   return (
     <PageLayout header={<Header />} footer={<Footer />}>
+      <Breadcrumb />
       <WithAsideLayout>
         <Main>
           <MainHeader>
-            <Breadcrumb className="mb-6" />
-            <h1 className="mb-4" data-testid="category-title">
+            <h1 className="main-title" data-testid="category-title">
               <Category.Title />
             </h1>
           </MainHeader>
 
           <MainBody data-testid="category-body">
             <Articles.Loop>
-              <div className="mb-6 block">
-                <Article.Link className="mb-2" data-testid="article-link">
-                  <Article.Title />
-                </Article.Link>
-                <Article.Summary className="text-grey-light text-sm" />
-              </div>
+              <Article.Link className="article-link" data-testid="article-link">
+                <h3>
+                  <Article.Title className="article-title" />
+                </h3>
+                <Article.Summary className="article-summary" />
+              </Article.Link>
             </Articles.Loop>
           </MainBody>
         </Main>
 
         <Aside>
           <Search.Input
+            className="sidebar-search"
             placeholder={t("search.shortplaceholder")}
-            className="mb-12 hidden md:block"
             data-testid="category-search-input"
           />
           <CategoryList />

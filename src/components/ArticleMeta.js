@@ -12,27 +12,17 @@ const ArticleMeta = ({ className }) => {
 
   return (
     <>
-      <div className={cx("flex items-center", className)}>
-        {/* <Avatar
-          src={article.author.avatar}
-          name={article.author.name}
-          className="mr-4"
-          isRound
-          size={10}
-        /> */}
-
-        <div>
-          <strong>
+      <div className={cx("article-meta", className)}>
+          <div class="article-meta-item">
             <Trans i18nKey="article.writtenBy">
               Written By {{ name: article.author.name }}
             </Trans>
-          </strong>
-          <strong>
+          </div>
+          <div class="article-meta-item">
             <Trans i18nKey="article.lastUpdated">
               Last updated {relativeUpdated} ago
             </Trans>
-          </strong>
-        </div>
+          </div>
       </div>
       <AccessBanner />
     </>

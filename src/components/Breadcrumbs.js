@@ -9,7 +9,7 @@ import * as Article from "@elevio/kb-kit/lib/toolkit/article";
 const Breadcrumb = ({ className, crumbs, noLinks }) => (
   <div
     className={cx(
-      "flex items-center text-grey-lighter leading-none",
+      "breadcrumbs",
       className
     )}
   >
@@ -17,13 +17,11 @@ const Breadcrumb = ({ className, crumbs, noLinks }) => (
       <React.Fragment key={index}>
         <Crumb
           crumb={crumb}
-          className="uppercase font-medium text-xs tracking-widest"
+          className="breadcrumbs-link"
           noLinks={noLinks}
         />
         {index < crumbs.length - 1 && (
-          <span className="mx-3">
-            {/* <Icon size={11} icon="chevron-right" /> */}
-          </span>
+          <span className="breadcrumbs-divider">/</span>
         )}
       </React.Fragment>
     ))}
@@ -35,14 +33,14 @@ const Crumb = ({ noLinks, crumb, className }) => {
     return <span className={className}>{crumb.title}</span>;
   }
   if (crumb.linkType === "article") {
-    return <Article.Link articleId={crumb.linkId}>{crumb.title}</Article.Link>;
+    return <Article.Link articleId={crumb.linkId} className={className}>{crumb.title}</Article.Link>;
   }
   if (crumb.linkType === "category") {
     return (
-      <Category.Link categoryId={crumb.linkId}>{crumb.title}</Category.Link>
+      <Category.Link categoryId={crumb.linkId} className={className}>{crumb.title}</Category.Link>
     );
   }
-  return <Meta.HomeLink>{crumb.title}</Meta.HomeLink>;
+  return <Meta.HomeLink className={className}>{crumb.title}</Meta.HomeLink>;
 };
 
 export default Breadcrumb;
