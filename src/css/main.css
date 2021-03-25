@@ -361,22 +361,24 @@ button {
 /* ARTICLE META */
 .article-meta {
   color: #333;
+  fill: #333;
   font-size: 14px;
   line-height: 20px;
   margin-block-start: 16px;
 }
+.article-meta-item {
+  display: flex;
+}
 .article-meta-item + .article-meta-item {
   margin-block-start: 8px;
 }
-
-@media screen and (min-width: 1024px) {
-  .article-meta {
-    display: flex;
-  }
-  .article-meta-item + .article-meta-item {
-    margin-block-start: 0;
-    margin-inline-start: 16px;
-  }
+.article-meta-icon {
+  height: 12px;
+  padding: 4px;
+  width: 12px;
+}
+.article-meta-label {
+  margin-inline-start: 4px;
 }
 
 /* ARTICLE/CATEGORY LIST */
