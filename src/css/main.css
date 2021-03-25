@@ -85,8 +85,8 @@ button {
   display: block;
 }
 .nav-logo-image {
-  height: 1.5rem;
-  width: 3.5rem;
+  height: 24px;
+  width: 56px;
 }
 .nav-title {
   margin-inline-start: 16px;
@@ -236,7 +236,7 @@ button {
 }
 .card-info {
   color: #666;
-  margin-top: 16px;
+  margin-block-start: 16px;
 }
 
 /* FOOTER */
@@ -259,7 +259,7 @@ button {
 
 /* WITH ASIDE */
 .main {
-  margin-bottom: 32px;
+  margin-block-end: 32px;
 }
 .aside {
   display: grid;
@@ -276,19 +276,19 @@ button {
     grid-column-start: 9;
     grid-column-end: 13;
     grid-row-start: 1;
-    padding-left: 32px;
+    padding-inline-start: 32px;
   }
   .main {
     grid-column-start: 1;
     grid-column-end: 9;
     grid-row-start: 1;
-    margin-bottom: 0;
+    margin-block-end: 0;
   }
 }
 
 /* MAIN */
 .main-header {
-  margin-bottom: 32px;
+  margin-block-end: 32px;
 }
 @media screen and (min-width: 1024px) {
   .main-content-card {
@@ -318,25 +318,6 @@ button {
   }
 }
 
-/* CATEGORY PAGE */
-.article-link {
-  background-color: #F7F7F7;
-  color: inherit;
-  display: block;
-  outline: none;
-  padding: 24px 32px;
-  text-decoration: none;
-}
-.article-link + .article-link {
-  margin-top: 32px;
-}
-.article-link:hover {
-  background-color: #F7F7F7;
-}
-.article-summary {
-  color: #333;
-}
-
 /* BREADCRUMBS */
 .breadcrumbs {
   display: flex;
@@ -356,6 +337,34 @@ button {
   color: #666;
   margin-inline-start: 8px;
   margin-inline-end: 8px;
+}
+
+/* ARTICLE LINK */
+.article-link {
+  background-color: #F7F7F7;
+  color: inherit;
+  display: flex;
+  outline: none;
+  padding: 24px 32px;
+  text-decoration: none;
+}
+.article-link + .article-link {
+  margin-block-start: 32px;
+}
+.article-link:hover {
+  background-color: #F7F7F7;
+}
+.article-link-breadcrumbs {
+  margin-block-end: 8px;
+}
+.article-link-image {
+  flex-shrink: 0;
+  height: 80px;
+  width: auto;
+}
+.article-link-summary {
+  color: #333;
+  margin-block-start: 8px;
 }
 
 /* ARTICLE META */
@@ -393,7 +402,7 @@ button {
 }
 .article-list-item,
 .category-list-item {
-  margin-top: 8px;
+  margin-block-start: 8px;
 }
 .article-list-link,
 .category-list-link {
@@ -403,4 +412,17 @@ button {
 .category-list-link:hover {
   color: #000;
   text-decoration: underline;
+}
+
+/* SHOW MORE */
+.show-more {
+  background-color: #F7F7F7;
+  font-weight: 500;
+  margin-block-start: 32px;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  padding: 16px 20px;
+}
+.show-more:disabled {
+  opacity: .5;
 }

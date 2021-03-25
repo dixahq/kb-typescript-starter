@@ -21,7 +21,7 @@ const Page = () => {
       header={
         <Header hideSearch>
           <SearchResults.IsNotEmpty>
-            <p className="mb-4">
+            <p>
               <Trans i18nKey="search.count" count={totalCount || 0}>
                 We found {{ count: totalCount }} articles for{" "}
                 <strong>"{{ searchTerm }}"</strong>
@@ -30,6 +30,7 @@ const Page = () => {
           </SearchResults.IsNotEmpty>
 
           <Search.Input
+            className="hero-search"
             placeholder={t("search.placeholder", "Search our help centre...")}
           />
         </Header>
@@ -38,7 +39,7 @@ const Page = () => {
     >
       <MainCentered>
         <SearchResults.LoopResults>
-          <SearchResult className="mb-6 block" />
+          <SearchResult />
         </SearchResults.LoopResults>
 
         <SearchResults.IsEmpty>
@@ -56,7 +57,7 @@ const Page = () => {
             </p>
           </div>
         </SearchResults.IsEmpty>
-        <SearchMore className="block mx-auto" />
+        <SearchMore />
       </MainCentered>
     </PageLayout>
   );

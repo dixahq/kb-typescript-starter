@@ -34,10 +34,12 @@ const Page = () => {
           <MainBody data-testid="category-body">
             <Articles.Loop>
               <Article.Link className="article-link" data-testid="article-link">
-                <h3>
-                  <Article.Title className="article-title" />
-                </h3>
-                <Article.Summary className="article-summary" />
+                <div>
+                  <h3>
+                    <Article.Title className="article-link-title" />
+                  </h3>
+                  <Article.Summary className="article-link-summary" />
+                </div>
               </Article.Link>
             </Articles.Loop>
           </MainBody>

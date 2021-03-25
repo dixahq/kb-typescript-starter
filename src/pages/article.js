@@ -24,7 +24,7 @@ const Page = () => {
   const { t } = useTranslation();
   return (
     <PageLayout header={<Header />} footer={<Footer />}>
-      <Breadcrumb />
+      <Breadcrumb className="breadcrumbs-header" />
       <WithAsideLayout>
         <Main>
           <MainHeader>

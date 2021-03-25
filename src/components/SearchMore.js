@@ -9,7 +9,7 @@ const SearchMore = ({ className, ...props }) => {
 
   return (
     <button
-      className={cx("ShowMoreButton", className)}
+      className={cx("show-more", className)}
       disabled={isFetching || !hasMore}
       onClick={loadMore}
       {...props}

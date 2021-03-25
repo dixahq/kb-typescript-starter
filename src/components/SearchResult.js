@@ -5,16 +5,14 @@ import * as SearchResults from "@elevio/kb-kit/lib/toolkit/searchResults";
 
 const SearchResult = ({ className, image }) => {
   return (
-    <SearchResults.ArticleLink>
-      <div className={className}>
-        {image && <img src={image} className="h-48" />}
-        <div className="p-6" data-testid="article-link">
-          <Breadcrumb className="mb-4" />
-          <h3 className="mb-2">
-            <SearchResults.ArticleTitle />
-          </h3>
-          <SearchResults.Snippet />
-        </div>
+    <SearchResults.ArticleLink className={cx('article-link', className)}>
+      {image && <img src={image} className="article-link-image" />}
+      <div>
+        <Breadcrumb className="article-link-breadcrumbs" />
+        <h3>
+          <SearchResults.ArticleTitle className="article-link-title" />
+        </h3>
+        <SearchResults.Snippet className="article-link-summary" />
       </div>
     </SearchResults.ArticleLink>
   );
