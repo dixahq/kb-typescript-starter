@@ -12,7 +12,7 @@ const Page = () => {
   return (
     <PageLayout header={<Header />} footer={<Footer />}>
       <ErrorPage title={t("error.title", "Whoops!")}>
-        <p className="text-xl mb-12">
+        <p className="error-message">
           <Trans i18nKey="error.problem">
             Sorry, there has been a problem.
           </Trans>

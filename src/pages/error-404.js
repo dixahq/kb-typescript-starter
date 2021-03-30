@@ -12,16 +12,16 @@ const Page = () => {
   const { t } = useTranslation();
   return (
     <PageLayout header={<Header />} footer={<Footer />}>
-      <ErrorPage title="Whoops!">
-        <p className="text-xl mb-12">
+      <ErrorPage title={t("error.title", "Whoops!")}>
+        <p className="error-message">
           <Trans i18nKey="error.404">
             The page you are looking for cannot be found.
           </Trans>
         </p>
 
-        <Search.Input placeholder={t("search.placeholder")} className="mb-12" />
+        <Search.Input placeholder={t("search.placeholder")} className="error-search" />
 
-        <p className="text-grey-light">
+        <p className="error-message">
           <Trans i18nKey="support.question">
             Need more help?{" "}
             <a href="#" className="underline">
