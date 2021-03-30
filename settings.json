@@ -1,4 +1,6 @@
 {
   "accountId": "konami",
-  "feedbackEnabled": true
+  "feedbackEnabled": true,
+  "agentLoginEnabled": true,
+  "ssoEnabled": true
 }

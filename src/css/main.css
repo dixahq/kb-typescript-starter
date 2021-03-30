@@ -94,6 +94,9 @@ button {
 .nav-desktop-menu {
   display: none;
 }
+.nav-desktop-menu-link + .nav-desktop-menu-link {
+  margin-inline-start: 16px;
+}
 .nav-mobile-menu {
   display: flex;
 }
@@ -151,6 +154,13 @@ button {
   max-width: 1120px;
   padding-block-end: 32px;
   width: 80%;
+}
+.mobile-menu-link {
+  display: block;
+  text-align: center;
+}
+.mobile-menu-link + .mobile-menu-link {
+  margin-block-start: 32px;
 }
 @media screen and (min-width: 1024px) {
   .mobile-menu {
@@ -255,6 +265,9 @@ button {
 }
 .footer-link {
   display: block;
+}
+.footer-link + .footer-link {
+  margin-left: 16px;
 }
 
 /* WITH ASIDE */

@@ -27,10 +27,10 @@ const Header = ({ children, className, hideSearch }) => {
             </div>
 
             <div className="nav-desktop-menu">
-              <a href="#">
+              <a className="nav-desktop-menu-link" href="#">
                 <Trans i18nKey="external-link">Our Site</Trans>
               </a>
-              <LoginLogout />
+              <LoginLogout className="nav-desktop-menu-link" />
 
               {supportedLanguages.length > 1 && (
                 <div className="w-56">
@@ -72,10 +72,10 @@ const Header = ({ children, className, hideSearch }) => {
         {displayMobileMenu && (
           <div className="mobile-menu">
             <div className="mobile-menu-wrapper">
-              <a href="#">
+              <a className="mobile-menu-link" href="#">
                 <Trans i18nKey="external-link">Our Site</Trans>
               </a>
-              <LoginLogout />
+              <LoginLogout className="mobile-menu-link" />
               {/* {supportedLanguages.length > 1 && (
                 <LanguagePicker
                   supportedLanguages={supportedLanguages}
