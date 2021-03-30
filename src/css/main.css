@@ -16,7 +16,9 @@ p {
   margin-block-end: 0;
 }
 svg {
+  clip-rule: evenodd;
   display: block;
+  fill-rule: evenodd;
 }
 input {
   appearance: none;
@@ -303,11 +305,64 @@ button {
 .main-header {
   margin-block-end: 32px;
 }
+.main-content-card {
+  position: relative;
+}
 @media screen and (min-width: 1024px) {
   .main-content-card {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,.04), 0 8px 32px rgba(0,0,0,.08);
     padding: 32px;
+  }
+}
+
+/* ARTICLE ACTIONS */
+.article-actions {
+  display: flex;
+  margin-block-start: -16px;
+  margin-block-end: 16px;
+}
+.article-actions-button {
+  fill: #666;
+  padding: 8px;
+  position: relative;
+}
+.article-actions-button:hover {
+  fill: #333;
+}
+.article-actions-icon {
+  height: 16px;
+  padding: 2px;
+  width: 16px;
+}
+.article-actions-tooltip {
+  background-color: #333;
+  border-radius: 4px;
+  bottom: 100%;
+  color: #FFF;
+  font-size: 14px;
+  left: 50%;
+  padding: 4px 12px;
+  position: absolute;
+  transform: translate3d(-50%, 0, 0);
+}
+.article-actions-tooltip::before {
+  border-color: #333 transparent transparent transparent;
+  border-style: solid;
+  border-width: 4px;
+  content: '';
+  display: block;
+  left: calc(50% - 4px);
+  position: absolute;
+  top: 100%;
+}
+@media screen and (min-width: 1024px) {
+  .article-actions {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    position: absolute;
+    top: 16px;
+    right: 16px;
   }
 }
 

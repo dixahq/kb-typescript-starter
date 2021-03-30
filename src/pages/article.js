@@ -17,7 +17,7 @@ import CategoryList from "../components/CategoryList";
 import ArticleList from "../components/ArticleList";
 import Breadcrumb from "../components/PageBreadcrumbs";
 import ArticleMeta from "../components/ArticleMeta";
-import ArticleIcons from "../components/ArticleIcons";
+import ArticleActions from "../components/ArticleActions";
 import ArticleFeedback from "../components/ArticleFeedback";
 
 const Page = () => {
@@ -28,7 +28,7 @@ const Page = () => {
       <WithAsideLayout>
         <Main>
           <MainHeader>
-            <ArticleIcons />
+            <ArticleActions />
             <h1 className="main-title" data-testid="article-title">
               <Article.Title />
             </h1>
