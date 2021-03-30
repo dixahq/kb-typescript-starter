@@ -27,10 +27,10 @@ const Header = ({ children, className, hideSearch }) => {
             </div>
 
             <div className="nav-desktop-menu">
-              <a className="text-white mr-6" href="#">
+              <a href="#">
                 <Trans i18nKey="external-link">Our Site</Trans>
               </a>
-              <LoginLogout className="text-white mr-6" />
+              <LoginLogout />
 
               {supportedLanguages.length > 1 && (
                 <div className="w-56">
@@ -50,8 +50,8 @@ const Header = ({ children, className, hideSearch }) => {
                   onClick={() => setDisplaySearchBar(!displaySearchBar)}
                   title="Search"
                 >
-                  <svg width="20" height="20" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.16666 3.33341C5.945 3.33341 3.33332 5.94509 3.33332 9.16675C3.33332 12.3884 5.945 15.0001 9.16666 15.0001C10.7777 15.0001 12.2349 14.3481 13.2914 13.2915C14.348 12.235 15 10.7778 15 9.16675C15 5.94509 12.3883 3.33341 9.16666 3.33341ZM1.66666 9.16675C1.66666 5.02461 5.02452 1.66675 9.16666 1.66675C13.3088 1.66675 16.6667 5.02461 16.6667 9.16675C16.6667 10.9373 16.0524 12.5654 15.0265 13.8481L18.0892 16.9108C18.4147 17.2363 18.4147 17.7639 18.0892 18.0893C17.7638 18.4148 17.2362 18.4148 16.9107 18.0893L13.848 15.0266C12.5653 16.0525 10.9372 16.6667 9.16666 16.6667C5.02452 16.6667 1.66666 13.3089 1.66666 9.16675Z" />
+                    <svg width="20" height="20" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M9.16666 3.33341C5.945 3.33341 3.33332 5.94509 3.33332 9.16675C3.33332 12.3884 5.945 15.0001 9.16666 15.0001C10.7777 15.0001 12.2349 14.3481 13.2914 13.2915C14.348 12.235 15 10.7778 15 9.16675C15 5.94509 12.3883 3.33341 9.16666 3.33341ZM1.66666 9.16675C1.66666 5.02461 5.02452 1.66675 9.16666 1.66675C13.3088 1.66675 16.6667 5.02461 16.6667 9.16675C16.6667 10.9373 16.0524 12.5654 15.0265 13.8481L18.0892 16.9108C18.4147 17.2363 18.4147 17.7639 18.0892 18.0893C17.7638 18.4148 17.2362 18.4148 16.9107 18.0893L13.848 15.0266C12.5653 16.0525 10.9372 16.6667 9.16666 16.6667C5.02452 16.6667 1.66666 13.3089 1.66666 9.16675Z" />
                     </svg>
                 </button>
               )}
@@ -72,10 +72,10 @@ const Header = ({ children, className, hideSearch }) => {
         {displayMobileMenu && (
           <div className="mobile-menu">
             <div className="mobile-menu-wrapper">
-              <a className="text-white mb-3" href="#">
+              <a href="#">
                 <Trans i18nKey="external-link">Our Site</Trans>
               </a>
-              <LoginLogout className="text-white mb-3" />
+              <LoginLogout />
               {/* {supportedLanguages.length > 1 && (
                 <LanguagePicker
                   supportedLanguages={supportedLanguages}
