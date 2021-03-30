@@ -27,7 +27,7 @@ const HomePage = () => {
             </Trans>
           </h1>
           <Search.Input
-            placeholder={t("search.placeholder")}
+            placeholder={t("search.placeholder", "Search our help centre...")}
             data-testid="search-input"
             className="hero-search"
           />

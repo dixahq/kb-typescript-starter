@@ -44,7 +44,7 @@ const Page = () => {
         <Aside>
           <Search.Input
             className="sidebar-search"
-            placeholder={t("search.shortplaceholder", "Search")}
+            placeholder={t("search.shortplaceholder", "Search...")}
             data-testid="article-search-input"
           />
           <CategoryList />

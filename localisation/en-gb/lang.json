@@ -4,23 +4,23 @@
     "thanksMsg": "Thanks for submitting your feedback!"
   },
   "error": {
-    "defaultTitle": "",
+    "defaultTitle": "There was an error.",
     "title": "Whoops!"
   },
   "login": "Log in",
   "logout": "Log out",
   "search": {
-    "shortplaceholder": "",
+    "shortplaceholder": "Search...",
     "placeholder": "Search our help centre..."
   },
   "pageTitles": {
-    "error": "",
-    "error404": "",
+    "error": "Error",
+    "error404": "Page Not Found",
     "article": "{{article.title}}",
     "category": "{{category.title}}",
-    "error401": "",
-    "home": "",
-    "search": ""
+    "error401": "Access Denied",
+    "home": "Help Centre",
+    "search": "Search"
   },
   "notification": {
     "loggedIn": "Logged in.",

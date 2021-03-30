@@ -19,7 +19,7 @@ const Page = () => {
           </Trans>
         </p>
 
-        <Search.Input placeholder={t("search.placeholder")} className="error-search" />
+        <Search.Input placeholder={t("search.placeholder", "Search our help centre...")} className="error-search" />
 
         <p className="error-message">
           <Trans i18nKey="support.question">
