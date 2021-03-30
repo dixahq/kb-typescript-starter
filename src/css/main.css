@@ -52,15 +52,9 @@ button {
 }
 
 /* OVERRIDES TO REVIST */
-.elevio__article-link,
-.elevio__category-link {
-  color: inherit;
-  outline: none;
-  text-decoration: none;
-}
-.elevio__article-body.article {
-  padding: 0;
-  margin-block-end: 0;
+.article {
+  padding: 0 !important;
+  margin-block-end: 0 !important;
 }
 
 /* HEADER */

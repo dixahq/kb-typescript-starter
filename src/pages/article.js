@@ -36,8 +36,8 @@ const Page = () => {
           </MainHeader>
 
           <MainBody>
-            <Article.Body className="mb-12" />
-            <ArticleFeedback className="mb-6" />
+            <Article.Body />
+            <ArticleFeedback />
           </MainBody>
         </Main>
 
