@@ -1,14 +1,6 @@
 import React from "react";
 import cx from "classnames";
-import { Trans } from "@elevio/kb-kit/lib/toolkit/trans";
 import useTranslation from "@elevio/kb-kit/lib/hooks/useTranslation";
-// TODO:
-// import { InnerCard } from "@elevio/styles/lib/components/cards";
-// import { Button } from "@elevio/styles/lib/components/buttons";
-// import TextInput from "@elevio/styles/lib/components/form/elements/TextInput";
-// import TextArea from "@elevio/styles/lib/components/form/elements/TextArea";
-// import ErrorLabel from "@elevio/styles/lib/components/form/elements/ErrorLabel";
-// import { Inline } from "@elevio/styles/lib/components/notifications";
 import useArticleFeedback, {
   FeedbackFormShape,
 } from "@elevio/kb-kit/lib/hooks/useArticleFeedback";
@@ -27,118 +19,107 @@ export const FeedbackInitial = ({
   );
   const _title = title || defaultTitle;
   return (
-    <h1>TODO</h1>
-    // <InnerCard
-    //   className={cx(
-    //     "flex flex-col lg:flex-row items-center justify-between",
-    //     className
-    //   )}
-    //   data-testid="article-feedback"
-    // >
-    //   <h3 className="mb-6 lg:mb-0">{_title}</h3>
-    //   <div className="flex-end align-right">
-    //     <Button
-    //       className="ml-4"
-    //       size="compact"
-    //       onClick={onPositive}
-    //       disabled={isLoading}
-    //       data-testid="article-feedback-positive"
-    //     >
-    //       <Trans i18nKey="articleFeedback.positive">Yes</Trans>
-    //     </Button>
-    //     <Button
-    //       className="ml-4"
-    //       size="compact"
-    //       onClick={onNegative}
-    //       disabled={isLoading}
-    //       data-testid="article-feedback-negative"
-    //     >
-    //       <Trans i18nKey="articleFeedback.negative">No</Trans>
-    //     </Button>
-    //   </div>
-    // </InnerCard>
+    <div
+      className={cx("article-feedback", className)}
+      data-testid="article-feedback"
+    >
+      <h3 className="article-feedback-title">{_title}</h3>
+      <div className="article-feedback-options">
+        <button
+          className="article-feedback-button"
+          type="button"
+          onClick={onPositive}
+          disabled={isLoading}
+          data-testid="article-feedback-positive"
+        >
+          {t("articleFeedback.positive", "Yes")}
+        </button>
+        <button
+          className="article-feedback-button"
+          type="button"
+          onClick={onNegative}
+          disabled={isLoading}
+          data-testid="article-feedback-negative"
+        >
+          {t("articleFeedback.negative", "No")}
+        </button>
+      </div>
+    </div>
   );
 };
 
-const FeedbackError = ({ className }) => (
-  <div className={className}>
-    <Trans i18nKey="articleFeedback.error">
-      Sorry there has been a problem, please try again.
-    </Trans>
-  </div>
-);
+const FeedbackError = ({ className }) => {
+  const { t } = useTranslation();
+  return (
+    <div className={cx("article-feedback", className)}>
+        {t("articleFeedback.error", "Sorry there has been a problem, please try again.")}
+    </div>
+  );
+}
 
 export const FeedbackSuccess = ({ className }) => {
   const { t } = useTranslation();
-  const message = t(
-    "articleFeedback.thanksMsg",
-    "Thanks for submitting your feedback!"
+  return (
+    <div className={cx("article-feedback", className)}>{t("articleFeedback.thanksMsg", "Thanks for submitting your feedback!")}</div>
   );
-
-  // return <Inline title={message} type="success" />;
-  return null;
 };
 
 const ErrorMessage = ({ error }) => {
   if (!error) return null;
-  // return <ErrorLabel data-testid={error}>{error}</ErrorLabel>;
-  return null;
+  return <div className="article-feedback-message" data-testid={error}>{error}</div>;
 };
 
 const EmailBox = ({ error, ...props }) => {
   const { t } = useTranslation();
-  // return (
-  //   <>
-  //     <TextInput
-  //       type="email"
-  //       name="email"
-  //       placeholder={t("articleFeedback.emailPlaceholder")}
-  //       data-testid="article-feedback-email-input"
-  //       hasError={!!error}
-  //       {...props}
-  //     />
-  //     <ErrorMessage error={error} />
-  //   </>
-  // );
-
-  return null;
+  return (
+    <>
+      <input
+        className={cx("article-feedback-input", !!error && "invalid")}
+        type="email"
+        name="email"
+        placeholder={t("articleFeedback.emailPlaceholder", "Email (optional)")}
+        data-testid="article-feedback-email-input"
+        {...props}
+      />
+      <ErrorMessage />
+    </>
+  );
 };
 
 const MessageBox = ({ error, ...props }) => {
   const { t } = useTranslation();
-  // return (
-  //   <>
-  //     <TextArea
-  //       name="feedback"
-  //       rows={8}
-  //       noResize
-  //       placeholder={t("articleFeedback.feedbackPlaceholder")}
-  //       data-testid="article-feedback-feedback-input"
-  //       hasError={!!error}
-  //       {...props}
-  //     />
-  //     <ErrorMessage error={error} />
-  //   </>
-  // );
-
-  return null;
+  return (
+    <>
+      <textarea
+        className={cx("article-feedback-input", !!error && "invalid")}
+        name="feedback"
+        rows={8}
+        noResize
+        placeholder={t("articleFeedback.feedbackPlaceholder", "How could this article be improved?")}
+        data-testid="article-feedback-feedback-input"
+        {...props}
+      />
+      <ErrorMessage error={error} />
+    </>
+  );
 };
 
 const SubmitButton = ({ disabled }) => {
+  const { t } = useTranslation();
   const classes = cx("submit", { invalid: disabled });
-  // return (
-  //   <Button
-  //     appearance="primary"
-  //     size="compact"
-  //     type="submit"
-  //     className={classes}
-  //     disabled={disabled}
-  //     data-testid="article-feedback-submit-button"
-  //   >
-  //     <Trans i18nKey="articleFeedback.submit">Submit</Trans>
-  //   </Button>
-  // );
-  return null;
+  return (
+    <button
+      appearance="primary"
+      size="compact"
+      type="submit"
+      className={cx("article-feedback-button", classes)}
+      disabled={disabled}
+      data-testid="article-feedback-submit-button"
+    >
+      {t("articleFeedback.submit", "Submit")}
+    </button>
+  );
+  // return null;
 };
 
 export const FeedbackForm = ({
@@ -154,54 +135,51 @@ export const FeedbackForm = ({
   handleMessageChange,
   onSubmit,
 }) => {
+  const { t } = useTranslation();
+
   return (
-    <form onSubmit={onSubmit} noValidate>
-      {/* <InnerCard className={className}>
-        <h3 className="mb-6">
-          <Trans i18nKey="articleFeedback.negativeQuestion">
-            Sorry this article did not help. We would love your feedback.
-          </Trans>
-        </h3>
+    <form className={cx("article-feedback", className)} onSubmit={onSubmit} noValidate>
+      <h3 className="article-feedback-title">
+          {t("articleFeedback.negativeQuestion", "Sorry this article did not help. We would love your feedback.")}
+      </h3>
 
-        <MessageBox
+      <MessageBox
+        disabled={isSubmitting}
+        error={messageError}
+        value={values.feedback}
+        onChange={handleMessageChange}
+      />
+
+      {!isEmailHidden && (
+        <EmailBox
           disabled={isSubmitting}
-          error={messageError}
-          value={values.feedback}
-          onChange={handleMessageChange}
+          value={values.email}
+          onChange={handleEmailChange}
+          error={emailError}
         />
+      )}
 
-        {!isEmailHidden && (
-          <EmailBox
+      {showAnonymousWarning && (
+        <p className="article-feedback-message">
+            {t("articleFeedback.confirmAnon", "Are you sure you want to send this anonymously?")}
+        </p>
+      )}
+
+      <div className="article-feedback-actions">
+        <SubmitButton disabled={isSubmitting || !!messageError} />
+
+        {!showAnonymousWarning && (
+          <button
+            className="article-feedback-button secondary"
+            onClick={onFeedbackSkipped}
             disabled={isSubmitting}
-            value={values.email}
-            onChange={handleEmailChange}
-            error={emailError}
-          />
+            data-testid="article-feedback-skip-button"
+            type="button"
+          >
+            {t("articleFeedback.skip", "Skip and send")}
+          </button>
         )}
-
-        {showAnonymousWarning && (
-          <p className="mb-4 text-lg">
-            <Trans i18nKey="articleFeedback.confirmAnon">
-              Are you sure you want to send this anonymously?
-            </Trans>
-          </p>
-        )}
-
-        <div className="flex items-center justify-between">
-          <SubmitButton disabled={isSubmitting || !!messageError} />
-
-          {!showAnonymousWarning && (
-            <Button
-              appearance="minimal"
-              onClick={onFeedbackSkipped}
-              disabled={isSubmitting}
-              data-testid="article-feedback-skip-button"
-            >
-              <Trans i18nKey="articleFeedback.skip">Skip and send</Trans>
-            </Button>
-          )}
-        </div>
-      </InnerCard> */}
+      </div>
     </form>
   );
 };
@@ -226,38 +204,38 @@ const ArticleFeedback = ({ className }) => {
     handleEmailChange,
   } = useArticleFeedback();
 
-  return null;
+  // return null;
 
-  // if (!isFeedbackEnabled) return null;
-  // if (stage === "error") return <FeedbackError className={className} />;
-  // if (stage === "positive" || stage === "submitted")
-  //   return <FeedbackSuccess className={className} />;
-  // if (stage === "negative") {
-  //   return (
-  //     <FeedbackForm
-  //       className={className}
-  //       onFeedbackSkipped={onFeedbackSkipped}
-  //       onSubmit={onSubmit}
-  //       isSubmitting={isFeedbackFormSubmitting}
-  //       isEmailHidden={emailFieldIsHidden}
-  //       handleMessageChange={handleMessageChange}
-  //       handleEmailChange={handleEmailChange}
-  //       showAnonymousWarning={showAnonymousWarning}
-  //       hasSubmitted={hasSubmitted}
-  //       values={values}
-  //       messageError={messageError}
-  //       emailError={emailError}
-  //     />
-  //   );
-  // }
-  // return (
-  //   <FeedbackInitial
-  //     className={className}
-  //     onPositive={onPositiveReaction}
-  //     onNegative={onNegativeReaction}
-  //     isLoading={isLoading}
-  //   />
-  // );
+  if (!isFeedbackEnabled) return null;
+  if (stage === "error") return <FeedbackError className={className} />;
+  if (stage === "positive" || stage === "submitted")
+    return <FeedbackSuccess className={className} />;
+  if (stage === "negative") {
+    return (
+      <FeedbackForm
+        className={className}
+        onFeedbackSkipped={onFeedbackSkipped}
+        onSubmit={onSubmit}
+        isSubmitting={isFeedbackFormSubmitting}
+        isEmailHidden={emailFieldIsHidden}
+        handleMessageChange={handleMessageChange}
+        handleEmailChange={handleEmailChange}
+        showAnonymousWarning={showAnonymousWarning}
+        hasSubmitted={hasSubmitted}
+        values={values}
+        messageError={messageError}
+        emailError={emailError}
+      />
+    );
+  }
+  return (
+    <FeedbackInitial
+      className={className}
+      onPositive={onPositiveReaction}
+      onNegative={onNegativeReaction}
+      isLoading={isLoading}
+    />
+  );
 };
 
 export default ArticleFeedback;

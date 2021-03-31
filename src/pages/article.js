@@ -37,8 +37,8 @@ const Page = () => {
 
           <MainBody>
             <Article.Body />
-            <ArticleFeedback />
           </MainBody>
+          <ArticleFeedback />
         </Main>
 
         <Aside>

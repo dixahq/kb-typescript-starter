@@ -20,7 +20,9 @@ svg {
   display: block;
   fill-rule: evenodd;
 }
-input {
+input, 
+textarea,
+select {
   appearance: none;
   background: none;
   border: none;
@@ -603,4 +605,68 @@ button {
     opacity: 1;
     transform: translate3d(-50%, -32px, 0);
   }
+}
+
+/* ARTICLE FEEDBACK */
+.article-feedback {
+  border-block-start: thin solid #EEE;
+  margin-block-start: 32px;
+  margin-inline-start: -32px;
+  margin-inline-end: -32px;
+  padding-block-start: 32px;
+  padding-inline-start: 32px;
+  padding-inline-end: 32px;
+  text-align: center;
+}
+.article-feedback-title {
+  margin-bottom: 32px;
+}
+.article-feedback-options {
+  display: flex;
+  justify-content: center;
+  margin-block-start: 16px;
+}
+.article-feedback-button {
+  background-color: #333;
+  border-radius: 4px;
+  color: #FFF;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 8px 12px;
+}
+.article-feedback-button.secondary {
+  background-color: #EEE;
+  color: #333;
+}
+.article-feedback-button + .article-feedback-button {
+  margin-inline-start: 8px;
+}
+.article-feedback-input {
+  border: thin solid #CCC;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 20px;
+  margin-block-start: 16px;
+  max-width: 100%;
+  min-width: 100%;
+  padding: 8px 12px;
+}
+.article-feedback-input:focus {
+  border-color: #666;
+}
+.article-feedback-input.invalid {
+  background-color: #FEE;
+  border-color: #600;
+  color: #300;
+}
+.article-feedback-actions {
+  display: flex;
+  margin-block-start: 32px;
+}
+.article-feedback-message {
+  color: #900;
+  font-size: 14px;
+  line-height: 20px;
+  margin-block-start: 8px;
+  text-align: start;
 }
