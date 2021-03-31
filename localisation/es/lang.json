@@ -1,7 +1,16 @@
 {
   "articleFeedback": {
     "question": "Did this article help solve your problem?",
-    "thanksMsg": "Thanks for submitting your feedback!"
+    "positive": "Yes",
+    "negative": "No",
+    "error": "Sorry there has been a problem, please try again.",
+    "thanksMsg": "Thanks for submitting your feedback!",
+    "emailPlaceholder": "Email (optional)",
+    "feedbackPlaceholder": "How could this article be improved?",
+    "submit": "Submit",
+    "negativeQuestion": "Sorry this article did not help. We would love your feedback.",
+    "confirmAnon": "Are you sure you want to send this anonymously?",
+    "skip": "Skip and send"
   },
   "error": {
     "defaultTitle": "There was an error.",
