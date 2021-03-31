@@ -43,14 +43,14 @@ const Page = () => {
         </SearchResults.LoopResults>
 
         <SearchResults.IsEmpty>
-          <div className="py-16 text-center">
-            <h3 className="mb-4">
+          <div className="search-empty">
+            <h3 className="search-empty-title">
               <Trans i18nKey="search.noResults">
                 Sorry we couldn’t find anything for “
                 <SearchResults.SearchTerm />”
               </Trans>
             </h3>
-            <p>
+            <p className="search-empty-message">
               <Trans i18nKey="search.tryAgain">
                 Try another search or <HomeLink>Browse by category</HomeLink>
               </Trans>
