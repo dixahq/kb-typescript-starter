@@ -233,6 +233,13 @@ button {
   text-align: center;
   text-decoration: none;
 }
+.card-icon {
+  height: 48px;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  margin-block-end: 32px;
+  width: 48px;
+}
 .card-title {
   color: #000;
 }
