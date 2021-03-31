@@ -1,4 +1,5 @@
 {
+  "articleFeedbackEnabled": true,
   "accountId": "konami",
   "feedbackEnabled": true,
   "agentLoginEnabled": true,
