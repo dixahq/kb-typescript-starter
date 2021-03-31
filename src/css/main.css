@@ -515,3 +515,41 @@ button {
   margin-block-start: 24px;
   max-width: 400px;
 }
+
+/* ACCESS BANNER */
+.access-banner {
+  border: thin solid #CCC;
+  border-radius: 6px;
+  margin-block-start: 32px;
+  overflow: hidden;
+}
+.access-banner-header {
+  background-color: #F7F7F7;
+  display: flex;
+  padding: 16px;
+}
+.access-banner-icon {
+  flex-shrink: 0;
+  height: 16px;
+  padding: 4px;
+  width: 16px;
+}
+.access-banner-title {
+  flex-grow: 1;
+  font-weight: 500;
+  margin-inline-start: 8px;
+  margin-inline-end: 8px;
+}
+.access-banner-toggle {
+  flex-shrink: 0;
+}
+.access-banner-body {
+  border-top: thin solid #CCC;
+  list-style: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding: 16px 24px;
+}
+.access-banner-group + .access-banner-group {
+  margin-block-start: 4px;
+}
