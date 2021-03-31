@@ -21,7 +21,7 @@ const Header = ({ children, className, hideSearch }) => {
           <div className="nav-wrapper">
             <div className="nav-details">
               <Logo />
-              <div class="nav-title">
+              <div className="nav-title">
                 <Trans i18nKey="header.title">Help Centre</Trans>
               </div>
             </div>
