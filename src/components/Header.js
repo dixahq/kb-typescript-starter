@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import cx from "classnames";
 import { Trans } from "@elevio/kb-kit/lib/toolkit/trans";
-// import Icon from "@elevio/styles/lib/components/icons";
 import * as Search from "@elevio/kb-kit/lib/toolkit/search";
 import useLanguages from "@elevio/kb-kit/lib/hooks/useLanguages";
-
-// import LanguagePicker from "@elevio/styles/lib/components/languagePicker";
 import { Logo } from "./Logo";
 import LoginLogout from "./LoginLogout";
+import LanguagePicker from '../components/LanguagePicker';
 
 const Header = ({ children, className, hideSearch }) => {
   const [displaySearchBar, setDisplaySearchBar] = useState(false);
@@ -31,15 +29,12 @@ const Header = ({ children, className, hideSearch }) => {
                 <Trans i18nKey="external-link">Our Site</Trans>
               </a>
               <LoginLogout className="nav-desktop-menu-link" />
-
               {supportedLanguages.length > 1 && (
-                <div className="w-56">
-                  {/* <LanguagePicker
-                    supportedLanguages={supportedLanguages}
-                    value={language}
-                    onChange={setCurrentLanguage}
-                  /> */}
-                </div>
+                <LanguagePicker
+                  language={language}
+                  setCurrentLanguage={setCurrentLanguage}
+                  supportedLanguages={supportedLanguages}
+                />
               )}
             </div>
 
@@ -76,13 +71,13 @@ const Header = ({ children, className, hideSearch }) => {
                 <Trans i18nKey="external-link">Our Site</Trans>
               </a>
               <LoginLogout className="mobile-menu-link" />
-              {/* {supportedLanguages.length > 1 && (
+              {supportedLanguages.length > 1 && (
                 <LanguagePicker
+                  language={language}
+                  setCurrentLanguage={setCurrentLanguage}
                   supportedLanguages={supportedLanguages}
-                  value={language}
-                  onChange={setCurrentLanguage}
                 />
-              )} */}
+              )}
             </div>
           </div>
         )}
