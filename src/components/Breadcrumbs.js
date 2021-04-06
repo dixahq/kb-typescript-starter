@@ -1,7 +1,6 @@
 import React from "react";
 import cx from "classnames";
 
-import { IBreadCrumb } from "@elevio/kb-kit/lib/types";
 import * as Meta from "@elevio/kb-kit/lib/toolkit/meta";
 import * as Category from "@elevio/kb-kit/lib/toolkit/category";
 import * as Article from "@elevio/kb-kit/lib/toolkit/article";
