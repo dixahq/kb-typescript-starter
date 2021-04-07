@@ -10,7 +10,7 @@ import LanguagePicker from '../components/LanguagePicker';
 const Header = ({ children, className, hideSearch }) => {
   const [displaySearchBar, setDisplaySearchBar] = useState(false);
   const [displayMobileMenu, setDisplayMobileMenu] = useState(false);
-  const { supportedLanguages, language, setCurrentLanguage } = useLanguages();
+  const { supportedLanguages, selectedLanguageId, setCurrentLanguageId } = useLanguages();
 
   return (
     <header className={cx("header", className)} data-testid="header">
@@ -31,8 +31,8 @@ const Header = ({ children, className, hideSearch }) => {
               <LoginLogout className="nav-desktop-menu-link" />
               {supportedLanguages.length > 1 && (
                 <LanguagePicker
-                  language={language}
-                  setCurrentLanguage={setCurrentLanguage}
+                  selectedLanguageId={selectedLanguageId}
+                  setCurrentLanguageId={setCurrentLanguageId}
                   supportedLanguages={supportedLanguages}
                 />
               )}
@@ -73,9 +73,9 @@ const Header = ({ children, className, hideSearch }) => {
               <LoginLogout className="mobile-menu-link" />
               {supportedLanguages.length > 1 && (
                 <LanguagePicker
-                  language={language}
-                  setCurrentLanguage={setCurrentLanguage}
-                  supportedLanguages={supportedLanguages}
+                selectedLanguageId={selectedLanguageId}
+                setCurrentLanguageId={setCurrentLanguageId}
+                supportedLanguages={supportedLanguages}
                 />
               )}
             </div>
