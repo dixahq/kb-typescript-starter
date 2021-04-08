@@ -15,8 +15,8 @@
   "repository": "https://github.com/elevio/kb-javascript-starter",
   "author": "kristian@elev.io",
   "dependencies": {
-    "@elevio/kb-kit": "^0.0.58",
-    "classnames": "^2.2.6",
+    "@elevio/kb-kit": "^0.0.66",
+    "classnames": "^2.3.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
