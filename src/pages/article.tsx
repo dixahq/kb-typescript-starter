@@ -1,6 +1,6 @@
 import * as React from "react";
-import * as Article from "@elevio/kb-kit/lib/toolkit/article";
-import * as Search from "@elevio/kb-kit/lib/toolkit/search";
+import * as Article from "@elevio/kb-kit/lib/components/article";
+import * as Search from "@elevio/kb-kit/lib/components/search";
 import useTranslation from "@elevio/kb-kit/lib/hooks/useTranslation";
 
 import PageLayout from "../components/layouts/Page";
@@ -20,7 +20,7 @@ import ArticleMeta from "../components/ArticleMeta";
 import ArticleActions from "../components/ArticleActions";
 import ArticleFeedback from "../components/ArticleFeedback";
 
-const Page = () => {
+function Page() {
   const { t } = useTranslation();
   return (
     <PageLayout header={<Header />} footer={<Footer />}>
@@ -53,5 +53,5 @@ const Page = () => {
       </WithAsideLayout>
     </PageLayout>
   );
-};
+}
 export default Page;

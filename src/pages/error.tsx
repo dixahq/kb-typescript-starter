@@ -1,6 +1,6 @@
 import * as React from "react";
-import { Trans } from "@elevio/kb-kit/lib/toolkit/trans";
-import * as Auth from "@elevio/kb-kit/lib/toolkit/auth";
+import useTranslation from "@elevio/kb-kit/lib/hooks/useTranslation";
+import { Trans } from "@elevio/kb-kit/lib/components/trans";
 
 import PageLayout from "../components/layouts/Page";
 import Header from "../components/Header";
@@ -8,13 +8,13 @@ import Footer from "../components/Footer";
 import ErrorPage from "../components/ErrorPage";
 
 const Page = () => {
+  const { t } = useTranslation();
   return (
     <PageLayout header={<Header />} footer={<Footer />}>
-      <ErrorPage title="Login Required">
+      <ErrorPage title={t("error.title", "Whoops!")}>
         <p className="error-message">
-          <Trans i18nKey="error.auth">
-            The article you have requested is restricted to logged in users. If
-            you have an account, <Auth.LoginLink>login here</Auth.LoginLink>.
+          <Trans i18nKey="error.problem">
+            Sorry, there has been a problem.
           </Trans>
         </p>
       </ErrorPage>

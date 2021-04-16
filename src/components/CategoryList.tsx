@@ -1,9 +1,12 @@
 import React from "react";
-import { Trans } from "@elevio/kb-kit/lib/toolkit/trans";
+import { Trans } from "@elevio/kb-kit/lib/components/trans";
 import useSubCategories from "@elevio/kb-kit/lib/hooks/useSubCategories";
-import * as Category from "@elevio/kb-kit/lib/toolkit/category";
+import * as Category from "@elevio/kb-kit/lib/components/category";
 
-const CategoryList = ({ className }) => {
+type CategoryListProps = {
+  className?: string;
+};
+function CategoryList({ className }: CategoryListProps) {
   const subCategories = useSubCategories();
 
   if (!subCategories || subCategories.length === 0) return null;
@@ -17,13 +20,13 @@ const CategoryList = ({ className }) => {
         <Category.LoopSubCategories>
           <li className="category-list-item">
             <Category.Link className="category-list-link">
-                <Category.Title />
+              <Category.Title />
             </Category.Link>
           </li>
         </Category.LoopSubCategories>
       </ul>
     </div>
   );
-};
+}
 
 export default CategoryList;
