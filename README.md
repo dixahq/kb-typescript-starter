@@ -1,4 +1,4 @@
-# Elevio KB Javascript starter
+# Elevio KB Typescript starter
 
 This repo provides a basis for your custom Elevio KB.
 
