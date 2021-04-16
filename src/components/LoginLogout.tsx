@@ -1,8 +1,8 @@
 import React from "react";
-import * as Auth from "@elevio/kb-kit/lib/toolkit/auth";
+import * as Auth from "@elevio/kb-kit/lib/components/auth";
 import useTranslation from "@elevio/kb-kit/lib/hooks/useTranslation";
 
-const LoginLogout = ({ className }) => {
+function LoginLogout({ className }) {
   const { t } = useTranslation();
   const loginText = t("login", "Log in");
   const logoutText = t("logout", "Log out");
@@ -20,6 +20,6 @@ const LoginLogout = ({ className }) => {
       />
     </>
   );
-};
+}
 
 export default LoginLogout;

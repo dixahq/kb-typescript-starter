@@ -1,9 +1,13 @@
 import React from "react";
 import cx from "classnames";
-import { Trans } from "@elevio/kb-kit/lib/toolkit/trans";
+import { Trans } from "@elevio/kb-kit/lib/components/trans";
 import useSearchResults from "@elevio/kb-kit/lib/hooks/useSearchResults";
 
-const SearchMore = ({ className, ...props }) => {
+type SearchMoreProps = {
+  className?: string;
+}
+
+function SearchMore({ className, ...props }: SearchMoreProps): JSX.Element | null {
   const { isFetching, loadMore, hasMore } = useSearchResults();
   if (!hasMore) return null;
 
