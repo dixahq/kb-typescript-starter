@@ -10,7 +10,8 @@
     "build": "elevio-kb build",
     "build:analyse": "elevio-kb build-analyse",
     "save": "elevio-kb save-version",
-    "deploy": "elevio-kb publish-version"
+    "deploy": "elevio-kb publish-version",
+    "compile-js": "npx rimraf js && npx tsc"
   },
   "repository": "https://github.com/elevio/kb-javascript-starter",
   "author": "kristian@elev.io",
