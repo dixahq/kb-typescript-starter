@@ -1,0 +1,6 @@
+src
+node_modules
+localisation
+*.json
+webpack.config.js
+README.md
