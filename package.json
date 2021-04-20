@@ -11,9 +11,10 @@
     "build:analyse": "elevio-kb build-analyse",
     "save": "elevio-kb save-version",
     "deploy": "elevio-kb publish-version",
-    "prettier": "prettier --check kb-javascript-starter --write",
-    "compile-js": "./build-tools/build.sh",
-    "transfer-js": "./build-tools/copyJs.sh"
+    "prettier:js": "prettier --check kb-javascript-starter --write",
+    "build:js": "babel src --out-dir kb-javascript-starter --extensions \".ts,.tsx\"",
+    "copy:js": "./build-tools/copyJs.sh",
+    "kb-js": "npm run build:js && npm run prettier:js && npm run copy:js"
   },
   "repository": "https://github.com/dixahq/kb-javascript-starter",
   "author": "support@elev.io",
@@ -27,6 +28,13 @@
   "license": "MIT",
   "private": true,
   "devDependencies": {
-    "prettier": "2.2.1"
+    "@babel/cli": "^7.13.14",
+    "@babel/core": "^7.13.14",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/preset-env": "^7.13.12",
+    "@babel/preset-react": "^7.13.13",
+    "@babel/preset-typescript": "^7.13.0",
+    "prettier": "2.2.1",
+    "typescript": "^4.2.3"
   }
 }
