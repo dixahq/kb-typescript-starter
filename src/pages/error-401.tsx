@@ -13,8 +13,7 @@ function Page() {
       <ErrorPage title="Login Required">
         <p className="error-message">
           <Trans i18nKey="error.auth">
-            The article you have requested is restricted to logged in users.If
-            you have an account, <Auth.LoginLink>login here</Auth.LoginLink>.
+            The article you have requested is restricted to logged in users. If you have an account, <Auth.LoginLink>login here</Auth.LoginLink>.
           </Trans>
         </p>
       </ErrorPage>
