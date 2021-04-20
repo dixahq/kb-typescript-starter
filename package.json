@@ -10,7 +10,10 @@
     "build": "elevio-kb build",
     "build:analyse": "elevio-kb build-analyse",
     "save": "elevio-kb save-version",
-    "deploy": "elevio-kb publish-version"
+    "deploy": "elevio-kb publish-version",
+    "prettier": "prettier --check kb-javascript-starter --write",
+    "compile-js": "./build-tools/build.sh",
+    "transfer-js": "./build-tools/copyJs.sh"
   },
   "repository": "https://github.com/dixahq/kb-javascript-starter",
   "author": "support@elev.io",
@@ -22,5 +25,8 @@
     "react-dom": "^17.0.1"
   },
   "license": "MIT",
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "prettier": "2.2.1"
+  }
 }
