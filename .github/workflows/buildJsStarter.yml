@@ -1,0 +1,86 @@
+# This workflow will build the components in this repo in javascript format.
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Build
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    env:
+      PRODUCTION_AWS_ACCESS_KEY_ID: ${{ secrets.PRODUCTION_AWS_ACCESS_KEY_ID }}
+      PRODUCTION_AWS_SECRET_ACCESS_KEY: ${{ secrets.PRODUCTION_AWS_SECRET_ACCESS_KEY }}
+      STAGING_AWS_ACCESS_KEY_ID: ${{ secrets.STAGING_AWS_ACCESS_KEY_ID }}
+      STAGING_AWS_SECRET_ACCESS_KEY: ${{ secrets.STAGING_AWS_SECRET_ACCESS_KEY }}
+      # SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+      # SLACK_CHANNEL: build
+      # SLACK_ICON_EMOJI: U+1F9BF
+      # SLACK_USERNAME: GitHub
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js 14
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+
+      - run: echo Ref.. ${{github.ref}}
+
+      - name: npm token
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
+
+      # - name: Cache node modules
+      #   uses: actions/cache@v1
+      #   env:
+      #     cache-name: cache-node-modules
+      #   with:
+      #     path: ~/.npm # npm cache files are stored in `~/.npm` on Linux/macOS
+      #     key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-build-${{ env.cache-name }}-
+      #       ${{ runner.os }}-build-
+      #       ${{ runner.os }}-
+
+      - name: Remove pre-existing files
+        run: rm -rf kb-javascript-starter
+
+      - name: Build Javascript from Typescript
+        # if: github.ref == 'refs/heads/master'
+        run: npm run compile-js
+
+      - name: Run prettier
+        # if: github.ref == 'refs/heads/production'
+        run: npm run prettier
+
+      - name: Add to kb-javascript-starter
+        run: echo TODO
+
+      # - name: Deploy Production
+      #   if: github.ref == 'refs/heads/production'
+      #   run: npm run deploy:production
+
+      # - name: Slack Notify
+      #   if: github.ref == 'refs/heads/master'
+      #   uses: rtCamp/action-slack-notify@v2.0.1
+      #   env:
+      #     SLACK_TITLE: HQ (old React) deployed to Staging
+      #     SLACK_MESSAGE: Go and check out the new changes
+
+      # - name: Slack Notify Production
+      #   if: github.ref == 'refs/heads/production'
+      #   uses: rtCamp/action-slack-notify@v2.0.1
+      #   env:
+      #     SLACK_TITLE: HQ (old React) deployed to Production
+      #     SLACK_MESSAGE: Go and check out the new changes
+
+      # - name: Notify slack of failure
+      #   if: failure()
+      #   uses: rtCamp/action-slack-notify@v2.0.1
+      #   env:
+      #     SLACK_TITLE: HQ (old React) build has FAILED!!!
+      #     SLACK_MESSAGE: Go to Github and work out why!

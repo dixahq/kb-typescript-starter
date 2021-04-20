@@ -12,7 +12,7 @@
     "save": "elevio-kb save-version",
     "deploy": "elevio-kb publish-version",
     "prettier": "prettier --check kb-javascript-starter --write",
-    "compile-js": "./build-tools/build.sh",
+    "compile-js": "npx tsc",
     "transfer-js": "./build-tools/copyJs.sh"
   },
   "repository": "https://github.com/elevio/kb-javascript-starter",
@@ -30,6 +30,7 @@
     "src"
   ],
   "devDependencies": {
-    "prettier": "2.2.1"
+    "prettier": "2.2.1",
+    "typescript": "^4.2.4"
   }
 }
