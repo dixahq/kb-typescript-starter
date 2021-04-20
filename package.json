@@ -26,9 +26,6 @@
   },
   "license": "MIT",
   "private": true,
-  "files": [
-    "src"
-  ],
   "devDependencies": {
     "prettier": "2.2.1"
   }
