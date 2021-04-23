@@ -1,13 +1,16 @@
 import React from "react";
 import cx from "classnames";
 import { Trans } from "@elevio/kb-kit/lib/components/trans";
-import useSearchResults from "@elevio/kb-kit/lib/hooks/useSearchResults";
+import { useSearchResults } from "@elevio/kb-kit/lib/hooks";
 
 type SearchMoreProps = {
   className?: string;
-}
+};
 
-function SearchMore({ className, ...props }: SearchMoreProps): JSX.Element | null {
+function SearchMore({
+  className,
+  ...props
+}: SearchMoreProps): JSX.Element | null {
   const { isFetching, loadMore, hasMore } = useSearchResults();
   if (!hasMore) return null;
 
@@ -22,6 +25,6 @@ function SearchMore({ className, ...props }: SearchMoreProps): JSX.Element | nul
       {isFetching && "..."}
     </button>
   );
-};
+}
 
 export default SearchMore;

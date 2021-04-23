@@ -1,6 +1,7 @@
 import React from "react";
 import cx from "classnames";
 import Alert from "../Alert";
+import LoadingBar from "../LoadingBar";
 
 type PageLayoutProps = {
   children: React.ReactNode;
@@ -11,6 +12,7 @@ type PageLayoutProps = {
 function PageLayout({ children, className, header, footer }: PageLayoutProps) {
   return (
     <main className={cx("page", className)}>
+      <LoadingBar />
       {header}
       <Alert />
       <div className="body">

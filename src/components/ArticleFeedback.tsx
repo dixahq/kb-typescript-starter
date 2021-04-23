@@ -1,9 +1,6 @@
 import React from "react";
 import cx from "classnames";
-import useTranslation from "@elevio/kb-kit/lib/hooks/useTranslation";
-import useArticleFeedback, {
-  IFeedbackForm,
-} from "@elevio/kb-kit/lib/hooks/useArticleFeedback";
+import { useTranslation, useArticleFeedback } from "@elevio/kb-kit/lib/hooks";
 
 type FeedbackInitialProps = {
   className?: string;

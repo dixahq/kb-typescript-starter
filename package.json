@@ -1,6 +1,6 @@
 {
   "name": "@elevio/kb-javascript-starter",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "This is a starter kit for Elevios KB builder project",
   "main": "src/index.js",
   "scripts": {
@@ -10,23 +10,22 @@
     "build": "elevio-kb build",
     "build:analyse": "elevio-kb build-analyse",
     "save": "elevio-kb save-version",
-    "deploy": "elevio-kb publish-version",
-    "prettier": "prettier --check kb-javascript-starter --write",
-    "compile-js": "./build-tools/build.sh",
-    "transfer-js": "./build-tools/copyJs.sh"
+    "deploy": "elevio-kb publish-version"
   },
   "repository": "https://github.com/dixahq/kb-javascript-starter",
   "author": "support@elev.io",
   "dependencies": {
-    "@elevio/kb-kit": "^0.0.70",
+    "@elevio/kb-kit": "^0.0.74",
     "classnames": "^2.3.1",
-    "prop-types": "^15.7.2",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-transition-group": "^4.4.1"
   },
   "license": "MIT",
   "private": true,
   "devDependencies": {
-    "prettier": "2.2.1"
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.3",
+    "@types/react-transition-group": "^4.4.1"
   }
 }

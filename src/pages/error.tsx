@@ -1,5 +1,5 @@
 import * as React from "react";
-import useTranslation from "@elevio/kb-kit/lib/hooks/useTranslation";
+import { useTranslation } from "@elevio/kb-kit/lib/hooks";
 import { Trans } from "@elevio/kb-kit/lib/components/trans";
 
 import PageLayout from "../components/layouts/Page";
