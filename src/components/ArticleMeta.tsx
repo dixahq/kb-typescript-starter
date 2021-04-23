@@ -40,7 +40,7 @@ function ArticleMeta({ className }: ArticleMetaProps) {
           </svg>
           <div className="article-meta-label">
             <Trans i18nKey="article.lastUpdated">
-              Last updated {article.lastPublishedAgo} ago
+              Last updated {{ relativeUpdated: article.lastPublishedAgo }}
             </Trans>
           </div>
         </div>

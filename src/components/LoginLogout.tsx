@@ -8,11 +8,11 @@ function LoginLogout({ className }) {
   const logoutText = t("logout", "Log out");
   return (
     <>
-      <Auth.AgentLoginLogout
+      {/* <Auth.AgentLoginLogout
         className={className}
         loginChildren={loginText}
         logoutChildren={logoutText}
-      />
+      /> */}
       <Auth.LoginLogoutLink
         className={className}
         loginChildren={loginText}
