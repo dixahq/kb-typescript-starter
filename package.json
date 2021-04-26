@@ -1,6 +1,6 @@
 {
   "name": "@elevio/kb-javascript-starter",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "This is a starter kit for Elevios KB builder project",
   "main": "src/index.js",
   "scripts": {
