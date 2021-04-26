@@ -10,11 +10,7 @@
     "build": "elevio-kb build",
     "build:analyse": "elevio-kb build-analyse",
     "save": "elevio-kb save-version",
-    "deploy": "elevio-kb publish-version",
-    "prettier:js": "prettier --check kb-javascript-starter --write",
-    "build:js": "babel src --out-dir kb-javascript-starter --extensions \".ts,.tsx\"",
-    "copy:js": "./build-tools/copyJs.sh",
-    "kb-js": "npm run build:js && npm run prettier:js && npm run copy:js"
+    "deploy": "elevio-kb publish-version"
   },
   "repository": "https://github.com/dixahq/kb-javascript-starter",
   "author": "support@elev.io",
