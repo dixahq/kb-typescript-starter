@@ -1,6 +1,6 @@
 import React from "react";
 import cx from "classnames";
-import useNotifications from "@elevio/kb-kit/lib/hooks/useNotifications";
+import { useNotifications } from "@elevio/kb-kit/lib/hooks";
 
 type AlertProps = {
   className?: string;

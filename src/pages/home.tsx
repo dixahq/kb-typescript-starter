@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Trans } from "@elevio/kb-kit/lib/components/trans";
-import useTranslation from "@elevio/kb-kit/lib/hooks/useTranslation";
+import { useTranslation } from "@elevio/kb-kit/lib/hooks";
 
 import * as Search from "@elevio/kb-kit/lib/components/search";
 import * as Categories from "@elevio/kb-kit/lib/components/categories";

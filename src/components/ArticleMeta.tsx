@@ -1,9 +1,7 @@
 import React from "react";
 import cx from "classnames";
 import { Trans } from "@elevio/kb-kit/lib/components/trans";
-import { formatDistance } from "date-fns";
-// import Avatar from "@elevio/styles/lib/components/Avatar";
-import useArticle from "@elevio/kb-kit/lib/hooks/useArticle";
+import { useArticle } from "@elevio/kb-kit/lib/hooks";
 import AccessBanner from "./AccessBanner";
 
 type ArticleMetaProps = {
@@ -12,8 +10,6 @@ type ArticleMetaProps = {
 function ArticleMeta({ className }: ArticleMetaProps) {
   const article = useArticle();
   if (!article) return null;
-
-  const relativeUpdated = formatDistance(article.lastUpdatedAt, Date.now());
 
   return (
     <>
@@ -44,7 +40,7 @@ function ArticleMeta({ className }: ArticleMetaProps) {
           </svg>
           <div className="article-meta-label">
             <Trans i18nKey="article.lastUpdated">
-              Last updated {relativeUpdated} ago
+              Last updated {{ relativeUpdated: article.lastPublishedAgo }}
             </Trans>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import * as Auth from "@elevio/kb-kit/lib/components/auth";
-import useTranslation from "@elevio/kb-kit/lib/hooks/useTranslation";
+import { useTranslation } from "@elevio/kb-kit/lib/hooks";
 
 function LoginLogout({ className }) {
   const { t } = useTranslation();
@@ -8,11 +8,11 @@ function LoginLogout({ className }) {
   const logoutText = t("logout", "Log out");
   return (
     <>
-      <Auth.AgentLoginLogout
+      {/* <Auth.AgentLoginLogout
         className={className}
         loginChildren={loginText}
         logoutChildren={logoutText}
-      />
+      /> */}
       <Auth.LoginLogoutLink
         className={className}
         loginChildren={loginText}

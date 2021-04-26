@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Trans } from "@elevio/kb-kit/lib/components/trans";
 import { AccessLevel } from "@elevio/kb-kit/lib/types";
-import useArticle from "@elevio/kb-kit/lib/hooks/useArticle";
+import { useArticle } from "@elevio/kb-kit/lib/hooks";
 
 function AccessBanner() {
   const article = useArticle();

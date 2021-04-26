@@ -1,6 +1,6 @@
 import React from "react";
 import cx from "classnames";
-import useTranslation from "@elevio/kb-kit/lib/hooks/useTranslation";
+import { useTranslation } from "@elevio/kb-kit/lib/hooks";
 
 type ErrorPageProps = {
   children: React.ReactNode;
