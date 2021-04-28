@@ -18,14 +18,12 @@
     "@elevio/kb-kit": "^0.0.74",
     "classnames": "^2.3.1",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-transition-group": "^4.4.1"
+    "react-dom": "^17.0.1"
   },
   "license": "MIT",
   "private": true,
   "devDependencies": {
     "@types/react": "^17.0.3",
-    "@types/react-dom": "^17.0.3",
-    "@types/react-transition-group": "^4.4.1"
+    "@types/react-dom": "^17.0.3"
   }
 }

@@ -1,8 +1,6 @@
 import * as React from 'react';
 import cx from 'classnames';
-import { CSSTransition } from 'react-transition-group';
 
-import { Helmet } from '@elevio/kb-kit/lib/components/meta';
 import { useLoading } from '@elevio/kb-kit/lib/hooks';
 
 export type LoadingBarProps = {
