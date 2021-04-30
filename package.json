@@ -1,8 +1,8 @@
 {
-  "name": "@elevio/kb-javascript-starter",
+  "name": "@elevio/kb-typescript-starter",
   "version": "0.2.3",
-  "description": "This is a starter kit for Elevios KB builder project",
-  "main": "src/index.js",
+  "description": "This is a TypeScript starter kit for Dixa's KB builder project",
+  "main": "src/index.tsx",
   "scripts": {
     "start": "elevio-kb dev",
     "extract-locales": "elevio-kb extract-locales",
@@ -12,13 +12,13 @@
     "save": "elevio-kb save-version",
     "deploy": "elevio-kb publish-version"
   },
-  "repository": "https://github.com/dixahq/kb-javascript-starter",
+  "repository": "https://github.com/dixahq/kb-typescript-starter",
   "author": "support@elev.io",
   "dependencies": {
-    "@elevio/kb-kit": "^0.0.74",
     "classnames": "^2.3.1",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "@elevio/kb-kit": "^0.0.74"
   },
   "license": "MIT",
   "private": true,
