@@ -1,6 +1,6 @@
 {
   "articleFeedbackEnabled": true,
-  "accountId": "",
+  "accountId": "konami",
   "feedbackEnabled": true,
   "agentLoginEnabled": true,
   "ssoEnabled": true
