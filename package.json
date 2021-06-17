@@ -1,6 +1,6 @@
 {
   "name": "@elevio/kb-typescript-starter",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "This is a TypeScript starter kit for Dixa's KB builder project",
   "main": "src/index.tsx",
   "scripts": {

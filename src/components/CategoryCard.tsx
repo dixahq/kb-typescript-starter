@@ -1,13 +1,13 @@
-import React from 'react';
-import cx from 'classnames';
-import { Trans } from '@elevio/kb-kit/lib/components/trans';
-import { useArticles, useCategory } from '@elevio/kb-kit/lib/hooks';
-import * as Category from '@elevio/kb-kit/lib/components/category';
-import * as Meta from '@elevio/kb-kit/lib/components/meta';
+import React from "react";
+import cx from "classnames";
+import { Trans } from "@elevio/kb-kit/lib/components/trans";
+import { useArticles, useCategory } from "@elevio/kb-kit/lib/hooks";
+import * as Category from "@elevio/kb-kit/lib/components/category";
+import * as Meta from "@elevio/kb-kit/lib/components/meta";
 
 type CategoryCardProps = {
   className?: string;
-  'data-test-id'?: string;
+  "data-test-id"?: string;
   categoryId?: string;
 };
 function CategoryCard({ categoryId, className }: CategoryCardProps) {
@@ -19,7 +19,7 @@ function CategoryCard({ categoryId, className }: CategoryCardProps) {
 
   return (
     <Category.Link
-      className={cx('card', className)}
+      className={cx("card", className)}
       data-testid="category-link"
     >
       <svg className="card-icon" width="24" height="24" viewBox="0 0 24 24">
@@ -39,8 +39,8 @@ function CategoryCard({ categoryId, className }: CategoryCardProps) {
         <Meta.If
           test={subCategoriesCount > 0 && !!totalCount && totalCount > 0}
         >
-          {' '}
-          &amp;{' '}
+          {" "}
+          &amp;{" "}
         </Meta.If>
         <Meta.If test={!!totalCount && totalCount > 0}>
           <Trans i18nKey="categorycard.articlesCount" count={totalCount || 0}>
