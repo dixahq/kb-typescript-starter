@@ -1,8 +1,8 @@
-import React from "react";
-import cx from "classnames";
-import { Trans } from "@elevio/kb-kit/lib/components/trans";
-import { useArticleFull } from "@elevio/kb-kit/lib/hooks";
-import AccessBanner from "./AccessBanner";
+import React from 'react';
+import cx from 'classnames';
+import { Trans } from '@elevio/kb-kit/lib/components/trans';
+import { useArticleFull } from '@elevio/kb-kit/lib/hooks';
+import AccessBanner from './AccessBanner';
 
 type ArticleMetaProps = {
   className?: string;
@@ -13,7 +13,7 @@ function ArticleMeta({ className }: ArticleMetaProps) {
 
   return (
     <>
-      <div className={cx("article-meta", className)}>
+      <div className={cx('article-meta', className)}>
         <div className="article-meta-item">
           <svg
             className="article-meta-icon"
