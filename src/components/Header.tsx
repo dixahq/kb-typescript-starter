@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import cx from "classnames";
-import { Trans } from "@elevio/kb-kit/lib/components/trans";
-import * as Search from "@elevio/kb-kit/lib/components/search";
-import { useLanguages } from "@elevio/kb-kit/lib/hooks";
-import { Logo } from "./Logo";
-import LoginLogout from "./LoginLogout";
-import LanguagePicker from "./LanguagePicker";
+import React, { useState } from 'react';
+import cx from 'classnames';
+import { Trans } from '@elevio/kb-kit/lib/components/trans';
+import { useLanguages } from '@elevio/kb-kit/lib/hooks';
+import SearchInput from '../components/SearchInput';
+import { Logo } from './Logo';
+import LoginLogout from './LoginLogout';
+import LanguagePicker from './LanguagePicker';
 
 type FooterProps = {
   className?: string;
@@ -15,14 +15,11 @@ type FooterProps = {
 function Header({ children, className, hideSearch }: FooterProps) {
   const [displaySearchBar, setDisplaySearchBar] = useState(false);
   const [displayMobileMenu, setDisplayMobileMenu] = useState(false);
-  const {
-    supportedLanguages,
-    selectedLanguage,
-    setCurrentLanguageId,
-  } = useLanguages();
+  const { supportedLanguages, selectedLanguage, setCurrentLanguageId } =
+    useLanguages();
 
   return (
-    <header className={cx("header", className)} data-testid="header">
+    <header className={cx('header', className)} data-testid="header">
       <div className="header-wrapper">
         <nav className="nav" aria-label="navigation">
           <div className="nav-wrapper">
@@ -93,7 +90,7 @@ function Header({ children, className, hideSearch }: FooterProps) {
         {displaySearchBar && !hideSearch && (
           <div className="mobile-search">
             <div className="mobile-search-wrapper">
-              <Search.Input className="mobile-search-input" />
+              <SearchInput className="mobile-search-input" />
             </div>
           </div>
         )}
