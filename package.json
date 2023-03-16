@@ -1,6 +1,6 @@
 {
   "name": "@elevio/kb-typescript-starter",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "This is a TypeScript starter kit for Dixa's KB builder project",
   "main": "src/index.tsx",
   "scripts": {
@@ -18,12 +18,13 @@
     "classnames": "^2.3.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "@elevio/kb-kit": "^0.2.0"
+    "@elevio/kb-kit": "^0.3.0"
   },
   "license": "MIT",
   "private": true,
   "devDependencies": {
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.3"
-  }
+  },
+  "overrides": { "glob-parent": "^5.1.2" }
 }
