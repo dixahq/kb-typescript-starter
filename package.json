@@ -26,5 +26,8 @@
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.3"
   },
-  "overrides": { "glob-parent": "^5.1.2" }
+  "overrides": {
+    "glob-parent": "^5.1.2",
+    "braces": "3.0.3"
+  }
 }
